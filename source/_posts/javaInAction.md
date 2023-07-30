@@ -1,28 +1,36 @@
 ---
-title: java8 
+title: javaInAction总结
 ---
 
 
 
-# 1 基础知识
+# 1 基础知识 1-3 
 
-| 概念              |                                                              |      |      |
-| ----------------- | ------------------------------------------------------------ | ---- | ---- |
-| 内部类            | 1 代码长 2容易造成误解                                       |      |      |
-| lambda            | 简洁                                                         |      |      |
-| Lambda表达式      |                                                              |      |      |
-| 方法引用          |                                                              |      |      |
-| 流                |                                                              |      |      |
-| 默认方法          |                                                              |      |      |
-| 行为参数化        |                                                              |      |      |
-| 谓词（predicate） | 在数学上常常用来代表一个类似函数的东西，它接受一个参数值，并返回true或false |      |      |
-|                   |                                                              |      |      |
+```
+
+```
+
+
+
+## 1.1 基础知识
+
+| 概念              |                                                              |
+| ----------------- | ------------------------------------------------------------ |
+| 内部类            | 1 代码长 2容易造成误解                                       |
+| lambda            | 简洁                                                         |
+| Lambda表达式      |                                                              |
+| 方法引用          |                                                              |
+| 流                |                                                              |
+| 默认方法          |                                                              |
+| 行为参数化        |                                                              |
+| 谓词（predicate） | 在数学上常常用来代表一个类似函数的东西，它接受一个参数值，并返回true或false |
+|                   |                                                              |
 
 Scala的语法expr match就对应于Java中的switch (expr
 
 
 
-#### 优秀代码鉴赏 
+## 1.2 匿名类的缺点- 代码含义模糊不清
 
 ```java
 public class MeaningOfThis
@@ -48,7 +56,7 @@ public class MeaningOfThis
 }
 ```
 
-#### 基于函数编程对苹果对象过滤
+## 1.3 基于函数编程对苹果对象过滤
 
 ```java
 public class FilteringApples{
@@ -138,8 +146,19 @@ public class FilteringApples{
 
 
 
-# 2函数式数据处理
+# 2函数式数据处理4-7
 
-# 3高效Java 8编程
+## 2.1创建stream的方式
 
-# 4超越Java 8
+- Stream.of("Java 8", "Lambdas", "In", "Action");
+- Stream.empty();
+- Arrays.stream(numbers) 构造函数
+- Stream.iterate(0, n -> n + 2) ， eg 实现斐波那契额序列  Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1],t[0] + t[1]})  s
+
+
+
+
+
+# 3高效Java 8编程8-12
+
+# 4超越Java 8 13-16
