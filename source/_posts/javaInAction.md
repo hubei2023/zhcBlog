@@ -2,15 +2,16 @@
 title: javaInAction总结
 ---
 
+```
+参考内容 
+java8实战
+https://github.com/winterbe/java8-tutorial.git
+https://github.com/java8/Java8InAction.git
+```
+
 
 
 # 1 基础知识 1-3 
-
-```
-
-```
-
-
 
 ## 1.1 基础知识
 
@@ -30,123 +31,19 @@ Scala的语法expr match就对应于Java中的switch (expr
 
 
 
-## 1.2 匿名类的缺点- 代码含义模糊不清
+##### 1.2 匿名类的缺点- 代码含义模糊不清
 
-```java
-public class MeaningOfThis
-{
-    public final int value = 4;
-    public void doIt()
-    {
-        int value = 6;
-        Runnable r = new Runnable(){
-            public final int value = 5;
-            public void run(){
-                int value = 10;
-                System.out.println(this.value);
-            }
-        };
-        r.run();
-    }
-    public static void main(String...args)
-    {
-        MeaningOfThis m = new MeaningOfThis();
-        m.doIt();
-    }
-}
-```
-
-## 1.3 基于函数编程对苹果对象过滤
-
-```java
-public class FilteringApples{
-
-    public static void main(String ... args){
-
-        List<Apple> inventory = Arrays.asList(new Apple(80,"green"),
-                                              new Apple(155, "green"),
-                                              new Apple(120, "red"));	
-
-        // [Apple{color='green', weight=80}, Apple{color='green', weight=155}]
-        List<Apple> greenApples = filterApples(inventory, FilteringApples::isGreenApple);
-        System.out.println(greenApples);
-        
-        // [Apple{color='green', weight=155}]
-        List<Apple> heavyApples = filterApples(inventory, FilteringApples::isHeavyApple);
-        System.out.println(heavyApples);
-        
-        // [Apple{color='green', weight=80}, Apple{color='green', weight=155}]
-        List<Apple> greenApples2 = filterApples(inventory, (Apple a) -> "green".equals(a.getColor()));
-        System.out.println(greenApples2);
-        
-        // [Apple{color='green', weight=155}]
-        List<Apple> heavyApples2 = filterApples(inventory, (Apple a) -> a.getWeight() > 150);
-        System.out.println(heavyApples2);
-        
-        // []
-        List<Apple> weirdApples = filterApples(inventory, (Apple a) -> a.getWeight() < 80 || 
-                                                                       "brown".equals(a.getColor()));
-        System.out.println(weirdApples);
-    }
-
-    
-    public static boolean isGreenApple(Apple apple) {
-        return "green".equals(apple.getColor()); 
-    }
-
-    public static boolean isHeavyApple(Apple apple) {
-        return apple.getWeight() > 150;
-    }
-
-    public static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> p){
-        List<Apple> result = new ArrayList<>();
-        for(Apple apple : inventory){
-            if(p.test(apple)){
-                result.add(apple);
-            }
-        }
-        return result;
-    }       
-
-    public static class Apple {
-        private int weight = 0;
-        private String color = "";
-
-        public Apple(int weight, String color){
-            this.weight = weight;
-            this.color = color;
-        }
-
-        public Integer getWeight() {
-            return weight;
-        }
-
-        public void setWeight(Integer weight) {
-            this.weight = weight;
-        }
-
-        public String getColor() {
-            return color;
-        }
-
-        public void setColor(String color) {
-            this.color = color;
-        }
-
-        public String toString() {
-            return "Apple{" +
-                   "color='" + color + '\'' +
-                   ", weight=" + weight +
-                   '}';
-        }
-    }
-
-}
-```
-
-
+##### 1.3 基于函数编程对苹果对象过滤
 
 # 2函数式数据处理4-7
+
+#### flatMap和map的区别
+
+```
+https://www.techiedelight.com/zh/difference-map-flatmap-java/
+```
+
+##### reduce的作用
 
 ## 2.1创建stream的方式
 
