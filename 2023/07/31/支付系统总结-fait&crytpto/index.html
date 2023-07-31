@@ -9,7 +9,7 @@
     
     <title>
         
-            北京-摩托车-交强险 |
+            支付业务 |
         
         Keep Theme
     </title>
@@ -135,7 +135,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">北京-摩托车-交强险</span>
+                <span class="title-hover-animation">支付业务</span>
             </div>
 
             
@@ -157,13 +157,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-07-30 10:19:12</span>
-        <span class="mobile">2023-07-30 10:19</span>
+        <span class="pc">2023-07-31 12:48:27</span>
+        <span class="mobile">2023-07-31 12:48</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-07-30 10:19:12</span>
+        <span class="pc">2023-07-31 12:48:27</span>
     </span>
     
     
@@ -183,12 +183,45 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <h1 id="1-摩托车上交强险"><a href="#1-摩托车上交强险" class="headerlink" title="1 摩托车上交强险"></a>1 摩托车上交强险</h1><ul>
-<li>地点北京：朝阳门北大街17号 </li>
-<li>需要材料：仅驾驶证 行驶证 身份证 </li>
-<li>上班时间大致 8:30-17:00 中午有人值班</li>
-<li>费用：以dr300为例 540￥ 保险+车船险</li>
-</ul>
+                <h3 id="1-支付系统业务"><a href="#1-支付系统业务" class="headerlink" title="1 支付系统业务"></a>1 支付系统业务</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简单支付系统包含 收银台 收单 通道 账户 对账 计价 对应的公司-比如做滴滴 百度</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复杂的-商户模式 路由  分润 出款 结算  分润 商户出入金费率 商户支付方式 币种 国家 等维度权限控制,具体根据产品定位  比如 易宝 等三方支付公司</span><br></pre></td></tr></table></figure>
+
+<h5 id="配置设计技巧"><a href="#配置设计技巧" class="headerlink" title="配置设计技巧"></a>配置设计技巧</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在设计配置的时候，可以设计一个默认配置 ，有另外配置优先走。 可以整体减少很多配置</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="支付"><a href="#支付" class="headerlink" title="支付"></a>支付</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">必须同步</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">用户--&gt;业务系统:选择/消费商品</span><br><span class="line">业务系统--&gt;支付订单系统:下单</span><br><span class="line">支付订单系统--&gt;业务系统:收银台</span><br><span class="line">业务系统--&gt;用户:收银台</span><br><span class="line">用户--&gt;用户:选择支付方式并支付（后面的交互稍有区别）</span><br><span class="line">通道--&gt;支付订单系统:回调成功</span><br><span class="line">支付订单系统--&gt;支付订单系统:更新订单 加账户</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="出款"><a href="#出款" class="headerlink" title="出款"></a>出款</h4><h3 id="参考技术架构"><a href="#参考技术架构" class="headerlink" title="参考技术架构"></a>参考技术架构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">如果日订单在300W峰值左右</span><br><span class="line">mysql  主从备 64c 5T 的物理机 业务写主 运营后台 对账</span><br><span class="line">rocketMQ </span><br><span class="line">go语言 6 台 16c16G机器 </span><br><span class="line">redis  单节点 。有待改进</span><br><span class="line"></span><br><span class="line">系统主要有  订单 支付（收单+账户） 渠道 模式</span><br><span class="line"></span><br><span class="line">支付方式主要有  银行卡  云闪付 微信支付分 支付宝</span><br><span class="line"></span><br><span class="line">设计技术 分表 hash环分表 分布式id</span><br></pre></td></tr></table></figure>
+
+<h3 id="数币支付"><a href="#数币支付" class="headerlink" title="数币支付"></a>数币支付</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">用户--&gt;业务系统:选择/消费商品</span><br><span class="line">业务系统--&gt;支付订单系统:下单</span><br><span class="line">支付订单系统--&gt;业务系统:收银台</span><br><span class="line">业务系统--&gt;用户:收银台</span><br><span class="line">用户--&gt;用户:选择支付方式并支付（后面的交互稍有区别）</span><br><span class="line">通道--&gt;支付订单系统:回调成功</span><br><span class="line">支付订单系统--&gt;支付订单系统:更新订单 加账户</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数币支付 和法币支付 。最大的区别就是通道的通知结果和支付系统的订单号对不上。只能通过地址判断。</span><br><span class="line">还有订单 存在多付 少付 问题。</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="海外支付"><a href="#海外支付" class="headerlink" title="海外支付"></a>海外支付</h4><p>本土支付 类似支付宝 微信(主要支付方式有 扫码 转账 )</p>
+<p>信用卡支付 </p>
+<p>壹云汇 visa master </p>
+<p>toc 支付系统</p>
+<p>账户 （账户表 账户流水表 ）</p>
+<p>用户</p>
+<p>交易系统 (订单 支付单 ，一对多，退款单 )</p>
+<p>收银台  （）</p>
+<p>渠道 </p>
+<p>路由</p>
+<p>toB支付交易系统</p>
+<p>dcc 浮动配置</p>
+<p> 商户 风控(地址风控 邮箱风控 ) kyc -实名认证  </p>
 
             </div>
 
@@ -202,33 +235,18 @@
                         <div class="article-prev">
                             <a class="prev"
                                rel="prev"
-                               href="/2023/07/30/%E5%85%A8%E7%90%83%E5%B8%82%E5%80%BC/"
+                               href="/2023/07/31/%E5%8C%BA%E5%9D%97%E9%93%BE-tagmemo/"
                             >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                                 <span class="title flex-center">
-                                <span class="post-nav-title-item"></span>
+                                <span class="post-nav-title-item">区块链-tag/memo</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                             </a>
                         </div>
                     
-                    
-                        <div class="article-next">
-                            <a class="next"
-                               rel="next"
-                               href="/2023/07/30/%E5%8C%BA%E5%9D%97%E9%93%BE-tagmemo/"
-                            >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">区块链-tag/memo</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                                <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                            </a>
-                        </div>
                     
                 </div>
             
