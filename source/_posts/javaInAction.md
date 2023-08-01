@@ -17,7 +17,7 @@ https://github.com/java8/Java8InAction.git
 
 | 概念              |                                                              |
 | ----------------- | ------------------------------------------------------------ |
-| 内部类            | 1 代码长 2容易造成误解                                       |
+| 内部类/匿名类     | 1 代码长 2容易造成误解 this super                            |
 | lambda            | 简洁                                                         |
 | Lambda表达式      |                                                              |
 | 方法引用          |                                                              |
@@ -45,14 +45,25 @@ https://www.techiedelight.com/zh/difference-map-flatmap-java/
 
 ##### reduce的作用
 
-## 2.1创建stream的方式
+## 2.5创建stream的方式
 
 - Stream.of("Java 8", "Lambdas", "In", "Action");
 - Stream.empty();
 - Arrays.stream(numbers) 构造函数
 - Stream.iterate(0, n -> n + 2) ， eg 实现斐波那契额序列  Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1],t[0] + t[1]})  s
+- Stream.generate(Math::random)
+- IntStream.generate(() -> 1) //传递函数 
 
+2.2 Stream Api
 
+1. filter()   接受一个方法 返回值必须是boolean
+2. finding  anyMatch allMatch noneMatch findAny   ？这四者有啥区别
+3. laziness 
+4. mapping  map 接受一个方法 ，返回一个对选哪个 。  flatMap ？
+5.  NumericStreams
+6. Reducing 
+
+ 
 
 
 
