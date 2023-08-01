@@ -9,11 +9,13 @@ https://github.com/winterbe/java8-tutorial.git
 https://github.com/java8/Java8InAction.git
 ```
 
+[TOC]
+
 
 
 # 1 基础知识 1-3 
 
-## 1.1 基础知识
+### 1.1 基础知识
 
 | 概念              |                                                              |
 | ----------------- | ------------------------------------------------------------ |
@@ -31,11 +33,13 @@ Scala的语法expr match就对应于Java中的switch (expr
 
 
 
-##### 1.2 匿名类的缺点- 代码含义模糊不清
+1.2 匿名类的缺点- 代码含义模糊不清
 
-##### 1.3 基于函数编程对苹果对象过滤
+1.3 基于函数编程对苹果对象过滤
 
 # 2函数式数据处理4-7
+
+#### 2.4
 
 #### flatMap和map的区别
 
@@ -45,7 +49,7 @@ https://www.techiedelight.com/zh/difference-map-flatmap-java/
 
 ##### reduce的作用
 
-## 2.5创建stream的方式
+#### 2.5创建stream的方式
 
 - Stream.of("Java 8", "Lambdas", "In", "Action");
 - Stream.empty();
@@ -63,9 +67,15 @@ https://www.techiedelight.com/zh/difference-map-flatmap-java/
 5.  NumericStreams
 6. Reducing 
 
- 
+#### 2.6 stram收集器
 
+1. PartitionPrimeNumbers 类 
+2. groupingBy
+3. partitioningBy
+4.  maxBy
+5. collectingAndThen
 
+#### 2.7 比较forkjoin和并行流
 
 # 3高效Java 8编程8-12
 
