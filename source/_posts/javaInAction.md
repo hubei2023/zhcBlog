@@ -80,3 +80,79 @@ https://www.techiedelight.com/zh/difference-map-flatmap-java/
 # 3高效Java 8编程8-12
 
 # 4超越Java 8 13-16
+
+
+
+### 1  第一部分
+
+第一章 
+
+```
+Lambda表达式、方法引用？、流和默认方法？
+方法引用eg：File::isHidden
+默认方法：目的 了支持库设计师，让他们能够写出更容易改进的接口
+
+内部迭代-流  外部迭代-for-each
+C++中臭名昭著的菱形继承问题
+泛型（比如Consumer<T>中的T）只能绑定到引用类型。这是由泛型内部的实现方式造成的
+IntPredicate
+
+java 8的函数接口
+
+Predicate<T> T->boolean IntPredicate,LongPredicate, DoublePredicate 
+Consumer<T> T->void IntConsumer,LongConsumer, DoubleConsumer 
+Function<T,R>
+Supplier<T> ()->T BooleanSupplier,IntSupplier, LongSupplier, 
+DoubleSupplier 
+UnaryOperator<T> T->T IntUnaryOperator, 
+LongUnaryOperator, 
+DoubleUnaryOperator 
+BinaryOperator<T> (T,T)->T IntBinaryOperator, 
+LongBinaryOperator, 
+DoubleBinaryOperator 
+BiPredicate<L,R> (L,R)->boolean 
+BiConsumer<T,U> (T,U)->void ObjIntConsumer<T>, 
+ObjLongConsumer<T>, 
+ObjDoubleConsumer<T> 
+BiFunction<T,U,R> (T,U)->R ToIntBiFunction<T,U>, 
+ToLongBiFunction<T,U>, 
+ToDoubleBiFunction<T,U>
+
+结论
+布尔表达式 (List<String> list) -> list.isEmpty() Predicate<List<String>> 
+创建对象 () -> new Apple(10) Supplier<Apple> 
+消费一个对象 (Apple a) -> 
+System.out.println(a.getWeight()) 
+Consumer<Apple> 
+从一个对象中
+选择/提取
+(String s) -> s.length() Function<String, Integer>或
+ToIntFunction<String> 
+合并两个值 (int a, int b) -> a * b IntBinaryOperator 
+比较两个对象 (Apple a1, Apple a2) -> 
+a1.getWeight().compareTo(a2.getWeight()) Comparator<Apple>或
+BiFunction<Apple, Apple, Integer>
+或 ToIntBiFunction<Apple, Apple>
+
+
+java1.0内存模型
+java5 线程池和并发集合
+Java 7添加了分支/合并（fork/join）框架
+```
+
+第二章 
+
+```
+行为参数化
+```
+
+第三章 
+
+```
+Lambda表达式和方法引用
+```
+
+
+
+
+
