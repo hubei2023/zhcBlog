@@ -9,8 +9,6 @@
     
     <title>
         
-            javaInAction总结 |
-        
         Keep Theme
     </title>
     
@@ -135,7 +133,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span class="title-hover-animation">javaInAction总结</span>
+                <span class="title-hover-animation"></span>
             </div>
 
             
@@ -147,7 +145,7 @@
                         <div class="author">
                             <span class="name">Keep Team</span>
                             
-                                <span class="author-label">Lv2</span>
+                                <span class="author-label">Lv3</span>
                             
                         </div>
                         <div class="meta-info">
@@ -157,13 +155,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-08-01 23:53:08</span>
-        <span class="mobile">2023-08-01 23:53</span>
+        <span class="pc">2023-08-09 15:32:10</span>
+        <span class="mobile">2023-08-09 15:32</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-08-01 23:53:08</span>
+        <span class="pc">2023-08-09 15:32:10</span>
     </span>
     
     
@@ -183,83 +181,7 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">参考内容 </span><br><span class="line">java8实战</span><br><span class="line">https://github.com/winterbe/java8-tutorial.git</span><br><span class="line">https://github.com/java8/Java8InAction.git</span><br></pre></td></tr></table></figure>
-
-<p>[TOC]</p>
-<h1 id="1-基础知识-1-3"><a href="#1-基础知识-1-3" class="headerlink" title="1 基础知识 1-3"></a>1 基础知识 1-3</h1><h3 id="1-1-基础知识"><a href="#1-1-基础知识" class="headerlink" title="1.1 基础知识"></a>1.1 基础知识</h3><table>
-<thead>
-<tr>
-<th>概念</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>内部类&#x2F;匿名类</td>
-<td>1 代码长 2容易造成误解 this super</td>
-</tr>
-<tr>
-<td>lambda</td>
-<td>简洁</td>
-</tr>
-<tr>
-<td>Lambda表达式</td>
-<td></td>
-</tr>
-<tr>
-<td>方法引用</td>
-<td></td>
-</tr>
-<tr>
-<td>流</td>
-<td></td>
-</tr>
-<tr>
-<td>默认方法</td>
-<td></td>
-</tr>
-<tr>
-<td>行为参数化</td>
-<td></td>
-</tr>
-<tr>
-<td>谓词（predicate）</td>
-<td>在数学上常常用来代表一个类似函数的东西，它接受一个参数值，并返回true或false</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>Scala的语法expr match就对应于Java中的switch (expr</p>
-<p>1.2 匿名类的缺点- 代码含义模糊不清</p>
-<p>1.3 基于函数编程对苹果对象过滤</p>
-<h1 id="2函数式数据处理4-7"><a href="#2函数式数据处理4-7" class="headerlink" title="2函数式数据处理4-7"></a>2函数式数据处理4-7</h1><h4 id="2-4"><a href="#2-4" class="headerlink" title="2.4"></a>2.4</h4><h4 id="flatMap和map的区别"><a href="#flatMap和map的区别" class="headerlink" title="flatMap和map的区别"></a>flatMap和map的区别</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.techiedelight.com/zh/difference-map-flatmap-java/</span><br></pre></td></tr></table></figure>
-
-<h5 id="reduce的作用"><a href="#reduce的作用" class="headerlink" title="reduce的作用"></a>reduce的作用</h5><h4 id="2-5创建stream的方式"><a href="#2-5创建stream的方式" class="headerlink" title="2.5创建stream的方式"></a>2.5创建stream的方式</h4><ul>
-<li>Stream.of(“Java 8”, “Lambdas”, “In”, “Action”);</li>
-<li>Stream.empty();</li>
-<li>Arrays.stream(numbers) 构造函数</li>
-<li>Stream.iterate(0, n -&gt; n + 2) ， eg 实现斐波那契额序列  Stream.iterate(new int[]{0, 1}, t -&gt; new int[]{t[1],t[0] + t[1]})  s</li>
-<li>Stream.generate(Math::random)</li>
-<li>IntStream.generate(() -&gt; 1) &#x2F;&#x2F;传递函数</li>
-</ul>
-<p>2.2 Stream Api</p>
-<ol>
-<li>filter()   接受一个方法 返回值必须是boolean</li>
-<li>finding  anyMatch allMatch noneMatch findAny   ？这四者有啥区别</li>
-<li>laziness </li>
-<li>mapping  map 接受一个方法 ，返回一个对选哪个 。  flatMap ？</li>
-<li>NumericStreams</li>
-<li>Reducing</li>
-</ol>
-<h4 id="2-6-stram收集器"><a href="#2-6-stram收集器" class="headerlink" title="2.6 stram收集器"></a>2.6 stram收集器</h4><ol>
-<li>PartitionPrimeNumbers 类 </li>
-<li>groupingBy</li>
-<li>partitioningBy</li>
-<li>maxBy</li>
-<li>collectingAndThen</li>
-</ol>
-<h4 id="2-7-比较forkjoin和并行流"><a href="#2-7-比较forkjoin和并行流" class="headerlink" title="2.7 比较forkjoin和并行流"></a>2.7 比较forkjoin和并行流</h4><h1 id="3高效Java-8编程8-12"><a href="#3高效Java-8编程8-12" class="headerlink" title="3高效Java 8编程8-12"></a>3高效Java 8编程8-12</h1><h1 id="4超越Java-8-13-16"><a href="#4超越Java-8-13-16" class="headerlink" title="4超越Java 8 13-16"></a>4超越Java 8 13-16</h1>
+                
             </div>
 
             
@@ -272,13 +194,13 @@
                         <div class="article-prev">
                             <a class="prev"
                                rel="prev"
-                               href="/2023/08/01/java/"
+                               href="/2023/08/09/java%E7%94%9F%E6%80%81/"
                             >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                                 <span class="title flex-center">
-                                <span class="post-nav-title-item">java</span>
+                                <span class="post-nav-title-item">java生态</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                             </a>
@@ -288,10 +210,10 @@
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/08/01/java%E7%94%9F%E6%80%81/"
+                               href="/2023/08/09/mysql/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">java生态</span>
+                                <span class="post-nav-title-item"></span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
