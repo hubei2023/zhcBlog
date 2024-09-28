@@ -103,3 +103,5 @@ theme: keep
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+google_analytics: G-HY5C3P6548
+
