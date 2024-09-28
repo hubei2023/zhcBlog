@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: book
+title: Hexo
 subtitle: ''
 description: ''
 keywords:
-author: ethan
+author: John Doe
 language: en
 timezone: ''
 
@@ -96,17 +96,9 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: nexT 
+theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
-
-
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
-
