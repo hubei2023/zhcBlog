@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: book blog
+title: book
 subtitle: ''
 description: ''
 keywords:
@@ -109,3 +109,4 @@ search:
   field: post
   format: html
   limit: 10000
+
