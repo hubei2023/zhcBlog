@@ -51,7 +51,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2024-10-01 15:07:46'
+  postUpdate: '2024-10-01 15:23:23'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -148,7 +148,114 @@
         }
       }
       detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">178</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="被认知圈养"><span class="site-name">被认知圈养</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">被认知圈养</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF-%E5%A4%A7%E7%BA%B2/" title="《明朝那些事儿》-明朝那些事儿-大纲">《明朝那些事儿》-明朝那些事儿-大纲</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">《明朝那些事儿》是中国作家当年明月所写的历史通俗读物系列，详细讲述了明朝276年的历史进程。这套书结合了历史事件和人物故事，生动地还原了明朝从建立、繁荣到衰亡的过程。全书共分为七部，贯穿了明朝各个重要的历史时期，着重描述了历史中的皇帝、权臣、名将、百姓等人物的命运与故事。
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">187</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="被认知圈养"><span class="site-name">被认知圈养</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">被认知圈养</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/10/01/%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/10%20**%E5%AE%9E%E8%B7%B5%E6%A1%88%E4%BE%8B**/" title="Untitled">Untitled</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-10-01T15:23:09.930Z" title="Created 2024-10-01 15:23:09">2024-10-01</time></span></div><div class="content">在Nginx的《实践案例》章节中，主要通过实际应用场景来展示如何配置和优化Nginx，以满足不同业务需求。实践案例通常涵盖Nginx在高可用性、负载均衡、反向代理、静态文件服务、缓存、SSL安全、API网关、微服务架构等方面的配置和优化。这些案例展示了Nginx在各种生产环境中的应用，并且可以作为参考模板来帮助用户应对实际工作中的挑战。
+以下是该章节的详细介绍与常见的实践案例。
+1. 构建高可用性和负载均衡方案Nginx常用于构建高可用性（HA）的负载均衡系统，通过将请求分发到多个后端服务器来提高系统的可用性和性能。此场景适用于处理大规模Web应用或API的高并发请求。
+1.1 负载均衡的基础配置Nginx支持多种负载均衡算法，默认使用轮询（Round Robin），但也可以配置其他算法，如加权轮询、最少连接和IP哈希。
+
+基础负载均衡配置：
+123456789101112131415161718upstream backend_servers &#123;    server backend1.example.com weight=3;    server backend2.exam ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/10/01/%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/11%20**HTTP2%E5%92%8C%E6%96%B0%E7%89%B9%E6%80%A7**/" title="Untitled">Untitled</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-10-01T15:23:09.930Z" title="Created 2024-10-01 15:23:09">2024-10-01</time></span></div><div class="content">在Nginx的《HTTP&#x2F;2和新特性》章节中，主要介绍如何通过Nginx启用和优化HTTP&#x2F;2协议，以及一些Nginx最新支持的特性。HTTP&#x2F;2 是HTTP协议的更新版本，旨在提高网页加载速度，减少延迟，并支持多路复用等先进功能。Nginx通过支持HTTP&#x2F;2协议，能够显著提升Web应用的性能和用户体验。此外，随着Nginx的不断发展，一些新的功能和特性也逐步加入，为用户带来了更多的性能优化和灵活性。
+以下是该章节的详细介绍。
+1. HTTP&#x2F;2的优势与工作原理HTTP&#x2F;2相比HTTP&#x2F;1.x有显著的性能改进，主要体现在以下几个方面：
+
+多路复用：允许在同一个TCP连接中并行处理多个请求和响应，而不需要为每个请求创建一个新的连接，从而减少连接建立和关闭的开销。
+头部压缩：通过HPACK算法对HTTP头进行压缩，减少头部的传输大小，特别适合复杂的请求和响应。
+服务器推送：允许服务器在客户端请求之前主动推送资源，减少请求延迟，加快页面渲染速度。
+优先级控制：客户端可以对请求设置优先级，服务器能够根据优先级来处理请求，提 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/10/01/%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/12%20**%E4%B8%8E%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%9B%86%E6%88%90**/" title="Untitled">Untitled</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-10-01T15:23:09.930Z" title="Created 2024-10-01 15:23:09">2024-10-01</time></span></div><div class="content">在Nginx的《与其他系统的集成》章节中，主要介绍如何将Nginx与各种第三方系统和服务集成，以实现更加复杂和高效的应用部署。Nginx的强大之处不仅在于它的高性能和灵活性，还在于它可以轻松与其他系统协作，提供诸如身份验证、负载均衡、缓存、监控、数据库访问等功能。通过与外部系统的集成，Nginx可以胜任从Web服务器到API网关、反向代理、微服务负载均衡器等多种角色。
+以下是该章节的详细介绍与常见集成实践。
+1. 与身份认证系统的集成在很多企业和Web应用中，身份验证是保证资源安全的关键部分。Nginx支持多种身份认证方式，常见的集成场景包括与OAuth2、LDAP、JWT等身份认证系统的集成。
+1.1 与OAuth2集成OAuth2是一个广泛使用的授权框架，Nginx可以通过反向代理集成OAuth2进行身份认证。Nginx与OAuth2代理结合可以实现单点登录（SSO）功能。
+
+OAuth2代理配置示例：
+12345678910111213141516171819server &#123;    listen 80;    server_name example.com;    lo ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/10/01/%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/2%20**%E5%AE%89%E8%A3%85%E4%B8%8E%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE**/" title="Untitled">Untitled</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-10-01T15:23:09.930Z" title="Created 2024-10-01 15:23:09">2024-10-01</time></span></div><div class="content">在《安装与基础配置》章节中，主要介绍了如何安装Nginx以及如何进行基本的配置，以便用户能够快速启动和运行Nginx服务器。这一章节通常涵盖Nginx的不同安装方法、配置文件结构、基础设置和常用指令的使用。以下是该章节的详细解析：
+1. 安装NginxNginx的安装过程根据操作系统不同而有所区别，常见的安装方式有通过软件包管理器安装和从源码编译安装两种方式。
+1.1 使用包管理器安装Nginx可以通过操作系统的包管理器（如APT、YUM等）轻松安装。
+
+在Ubuntu&#x2F;Debian上安装：
+12sudo apt updatesudo apt install nginx
+安装完成后，可以通过以下命令启动Nginx：
+1sudo systemctl start nginx
+
+在CentOS&#x2F;Red Hat上安装：
+12sudo yum install epel-releasesudo yum install nginx
+同样，安装完成后可以通过以下命令启动Nginx：
+1sudo systemctl start nginx
+
+验证安装：在浏览器中输入服务器的IP地址或 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/10/01/%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/3%20**%E5%A4%84%E7%90%86%E9%9D%99%E6%80%81%E4%B8%8E%E5%8A%A8%E6%80%81%E5%86%85%E5%AE%B9**/" title="Untitled">Untitled</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-10-01T15:23:09.930Z" title="Created 2024-10-01 15:23:09">2024-10-01</time></span></div><div class="content">在Nginx的《处理静态与动态内容》这一章节中，主要讨论如何使用Nginx处理静态文件（如HTML、CSS、JavaScript、图像文件等）以及如何与后端应用服务器集成，处理动态内容（如PHP、Python、Ruby等语言生成的动态页面）。这一部分内容非常重要，因为Nginx的高性能和灵活性使其成为处理静态和动态内容的理想选择。
+以下是该章节的详细解析：
+1. 处理静态内容Nginx特别擅长处理静态内容，依赖其高效的事件驱动架构，使得它能够在低资源消耗的情况下快速响应静态文件请求。静态内容指的是不需要后端服务器处理，直接通过文件系统从服务器上读取并返回给客户端的内容。
+1.1 基本静态文件配置要让Nginx处理静态文件，我们只需要指向包含这些文件的目录，并配置文件的默认处理方式。
+
+示例配置：
+123456789server &#123;    listen 80;    server_name static.example.com;    root /var/www/static;    location / &#123;        try_files $uri $uri/ = ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E5%B0%8F%E8%AF%B4/%E5%82%B2%E6%85%A2%E4%B8%8E%E5%81%8F%E8%A7%81/" title="傲慢与偏见">傲慢与偏见</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">《傲慢与偏见》（Pride and Prejudice）是英国作家简·奥斯汀（Jane Austen）创作的经典爱情小说，首次出版于1813年。这部作品以轻松幽默的笔调揭示了18世纪末至19世纪初英国乡村的社会生活，探讨了爱情、婚姻、阶级和女性地位等主题。以下是《傲慢与偏见》的详细大纲：
+
+1. 序幕：班内特家的生活
+班内特家的介绍：故事以班内特家为开篇，班内特夫妇和他们的五个女儿（简、伊丽莎白、玛丽、凯瑟琳、莉迪亚）生活在赫特福德郡的农村。班内特太太非常关心女儿们的婚姻，急于为她们寻找合适的丈夫，因为班内特家族的地产按照遗产法规定，将在班内特先生去世后由远亲柯林斯先生继承。
+
+宾利先生的到来：富有的单身贵族查尔斯·宾利先生搬到了邻近的内瑟斐庄园，这一消息在班内特家引起了极大的兴趣。班内特太太希望宾利先生能够娶她的女儿之一，尤其是大女儿简·班内特。
+
+
+
+2. 舞会与初次相遇
+在梅里顿的舞会上：宾利先生和他的朋友菲茨威廉·达西先生参加了在梅里顿举办的舞会。宾利先生对简产生了浓厚的兴趣，而达西则给人一种冷漠和傲慢的印象，尤其是他对伊丽莎白·班内特表现出的轻视态度，称她“还算不上漂亮”。
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E5%B0%8F%E8%AF%B4/%E6%9C%88%E4%BA%AE%E5%92%8C%E5%85%AD%E4%BE%BF%E5%A3%AB/" title="月亮和六便士">月亮和六便士</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">《月亮和六便士》是英国作家威廉·萨默塞特·毛姆创作的长篇小说，灵感来源于法国画家保罗·高更的生平。小说探讨了艺术、天才、牺牲与世俗生活的冲突，主要围绕主人公查尔斯·思特里克兰德（Charles Strickland）离开家庭追求艺术的故事展开。
+详细大纲：引言：主人公查尔斯·思特里克兰德的介绍
+小说由第一人称叙述者讲述，他一开始认为思特里克兰德是个平凡的人，但后来随着思特里克兰德的艺术声名鹊起，叙述者逐渐认识到他的伟大。
+叙述者讲述了艺术界对思特里克兰德作品的评价，指出他的画作充满了个性和天才。
+思特里克兰德的转变
+思特里克兰德原本是个证券经纪人，有着平凡的中产阶级生活，妻子贤惠、家庭幸福。然而，他在四十岁时突然抛弃了家庭和稳定的生活，前往巴黎追求艺术创作。
+这一转变震惊了他的家庭和朋友。他毫无预兆地放弃了在伦敦的生活，决定成为一名画家，尽管当时他并没有任何艺术背景。
+巴黎的苦难与艺术追求
+在巴黎，思特里克兰德的生活陷入贫困。他不再关心外界的看法，只追求艺术创作，哪怕生活条件恶劣也在所不惜。
+思特里克兰德对外界的冷漠，以及他为艺术所作出的极端牺牲让周围的人感到困惑不解，甚至蔑视他。然而 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E5%B0%8F%E8%AF%B4/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC/" title="百年孤独">百年孤独</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">《百年孤独》（Cien años de soledad）是哥伦比亚作家加夫列尔·加西亚·马尔克斯（Gabriel García Márquez）创作的拉丁美洲魔幻现实主义经典小说。书中以虚构的小镇马孔多为背景，讲述了布恩迪亚家族七代人长达百年的兴衰史。小说通过对家族命运的描述，反映了拉丁美洲历史、社会和文化的变迁，充满了象征、隐喻和魔幻现实主义的手法。
+以下是《百年孤独》的详细大纲：
+
+1. 序幕：马孔多的诞生
+何塞·阿尔卡蒂奥·布恩迪亚和乌尔苏拉的出发：故事开始于布恩迪亚家族的祖先何塞·阿尔卡蒂奥·布恩迪亚，他带着妻子乌尔苏拉·伊瓜兰离开故乡，创建了马孔多小镇。他们夫妻的结合象征着家族的开端，也预示了布恩迪亚家族复杂的命运。
+马孔多的早期繁荣：随着何塞的努力和理想，马孔多逐渐发展成一个繁荣的城镇。在这个过程中，他与妻子乌尔苏拉一起建立了家族的根基，但也种下了家族未来悲剧的种子。
+
+
+2. 家族的诅咒与命运
+乱伦与家族的诅咒：布恩迪亚家族的一个主要线索是乱伦的禁忌。家族中几代人都担心乱伦会导致后代出生时长有猪尾巴的诅咒。这一诅咒贯穿了整部小说，成为家族无法逃避的命运隐喻。
+家族命运的循 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E6%96%BD%E7%93%A6%E8%BE%9B%E6%A0%BC%E5%81%A5%E8%BA%AB%E5%85%A8%E4%B9%A6/%E6%96%BD%E7%93%A6%E8%BE%9B%E6%A0%BC%E5%81%A5%E8%BA%AB%E5%85%A8%E4%B9%A6-%E5%A4%A7%E7%BA%B2/" title="施瓦辛格健身全书">施瓦辛格健身全书</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">《施瓦辛格健身全书》是阿诺·施瓦辛格撰写的一本关于健身训练的权威书籍，书中详细介绍了力量训练、营养、健美比赛准备以及如何塑造完美体型的知识。这本书是健美爱好者和健身爱好者的经典指南。以下是本书的大纲概述：
+1. 健美的历史与演变
+健美运动的起源和发展
+健美运动的著名人物
+阿诺·施瓦辛格的健美之路
+
+2. 健美的基础理念
+健美的定义与目的
+健美与力量训练的区别
+健美的三大支柱：训练、营养、休息
+心态和决心的重要性
+
+3. 训练的基本原则
+热身与拉伸的必要性
+重复次数与训练强度的关系
+训练频率与肌肉恢复
+如何避免训练过度
+逐渐增加训练量（渐进性负荷原则）
+正确的呼吸技巧
+
+4. 肌肉解剖与训练方法
+肌肉的结构与功能
+如何针对不同肌肉群进行训练
+各主要肌肉群的训练动作与技巧：
+胸部训练：卧推、哑铃飞鸟等
+背部训练：引体向上、硬拉等
+肩部训练：推举、侧平举等
+腿部训练：深蹲、腿举等
+手臂训练：弯举、臂屈伸等
+腹肌训练：卷腹、仰卧起坐等
+
+
+如何组合训练来达到最大效果（超组、巨组等训练方法）
+
+5. 初学者训练计划
+针对新手的入门训练方案
+如何制定初学者的训练计划
+基础力量的提升方法
+锻炼习惯的 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF-%E5%A4%A7%E7%BA%B2/" title="《明朝那些事儿》-明朝那些事儿-大纲">《明朝那些事儿》-明朝那些事儿-大纲</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">《明朝那些事儿》是中国作家当年明月所写的历史通俗读物系列，详细讲述了明朝276年的历史进程。这套书结合了历史事件和人物故事，生动地还原了明朝从建立、繁荣到衰亡的过程。全书共分为七部，贯穿了明朝各个重要的历史时期，着重描述了历史中的皇帝、权臣、名将、百姓等人物的命运与故事。
 以下是《明朝那些事儿》系列的详细大纲：
 
 第一部：洪武大帝
@@ -167,135 +274,4 @@
 晚年的朱元璋由于对官员的极度不信任，进行了大规模的政治清洗和杀戮，肃清了李善长、蓝玉等功臣。这些清洗行动使得明朝的政治环境更加专制和恐怖，奠定了明朝政治高压的基础。
 
 
- ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%AC%AC%E4%B8%80%E9%83%A8%EF%BC%9A%E6%B4%AA%E6%AD%A6%E5%A4%A7%E5%B8%9D/" title="《明朝那些事儿》-第一部：洪武大帝">《明朝那些事儿》-第一部：洪武大帝</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">第一部：洪武大帝《明朝那些事儿》第一部《洪武大帝》主要讲述了明朝开国皇帝朱元璋从贫苦农民到推翻元朝、建立明朝的传奇一生。这一部详细描述了朱元璋的成长、明朝的建立、洪武年间的统治与改革，以及他如何通过严苛的手段巩固政权。本书通过生动的语言、通俗易懂的叙述，展现了一个农民皇帝的智慧与铁腕手段，同时揭示了明朝初期的历史背景与政治制度的奠基过程。
-1. 朱元璋的出身与早期经历
-贫苦出身：
-
-朱元璋出生在元末社会动荡的时期，他的家境极为贫困，父母和兄弟姐妹因饥荒早逝。他原名朱重八，是家中的第四个孩子。家境贫困到无法谋生时，朱元璋曾在寺庙中当了几年和尚，这是他早年人生的一个重要转折点。
-
-
-走上起义道路：
-
-元朝末年，社会矛盾激化，各地爆发了农民起义。朱元璋在红巾军首领郭子兴的支持下开始起兵反抗元朝。起初，他只是一个无名的小将，但凭借他的聪明才智、坚韧不拔的性格，以及对时局的敏锐洞察，逐步崛起。
-
-
-
-2. 朱元璋的崛起与统一南方
-与陈友谅、张士诚的斗争：
-
-元末的农民起义军内部派系林立，朱元璋面临着强大的敌对势力，包括陈友谅和张士诚。陈友谅控制了长江中游的大片土地，张士诚则在江浙一带割据。朱元璋 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%AC%AC%E4%B8%83%E9%83%A8%EF%BC%9A%E5%A4%A9%E4%B8%8B%E7%9A%84%E7%BB%88%E7%BB%93/" title="《明朝那些事儿》-第七部：天下的终结">《明朝那些事儿》-第七部：天下的终结</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">第七部：天下的终结《明朝那些事儿》第七部《天下的终结》是该系列的最后一卷，详细讲述了明朝灭亡后，南明政权的挣扎与覆灭，以及满清逐步统一中国的过程。这一卷涵盖了南明政权的兴亡、清朝的入关与统一、以及明清交替时期的重要历史事件和人物，最终展示了明清易代的复杂历史进程。
-
-1. 明朝的覆灭与南明的建立
-崇祯帝自缢与明朝灭亡：
-
-1644年，李自成率领的农民军攻入北京，明朝灭亡。面对国家的绝望局面，崇祯帝在煤山（今景山）自缢身亡，结束了明朝276年的统治。崇祯帝的死标志着大明帝国的正式终结，但明朝的残余势力并未完全消失。
-
-
-南明政权的建立：
-
-明朝灭亡后，明朝宗室和一些忠臣在南方建立了多个短暂的政权，史称南明。这些政权自称继承了大明的正统，试图继续与满清政权抗争。南明政权包括弘光政权、隆武政权、永历政权等。
-
-
-弘光政权的崛起与覆灭：
-
-崇祯帝死后，明朝宗室朱由崧在南京建立了弘光政权。弘光政权是南明最早的政权，但由于内部的腐败和军事力量的薄弱，它很快被满清军队击溃。1645年，清军攻入南京，弘光政权覆灭，朱由崧被俘。
-
-
-
-
-2. 清军入关与全国统一
-清军的入关与吴三桂：
-
-1644年，李自 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%AC%AC%E4%B8%89%E9%83%A8%EF%BC%9A%E5%A4%A9%E4%B8%8B%E8%8B%B1%E9%9B%84%E8%B0%81%E6%95%8C%E6%89%8B/" title="《明朝那些事儿》-第三部：天下英雄谁敌手">《明朝那些事儿》-第三部：天下英雄谁敌手</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">第三部：天下英雄谁敌手《明朝那些事儿》第三部《天下英雄谁敌手》详细描述了明朝中期的重要历史事件与人物，特别是明朝从“仁宣之治”的稳定到“土木堡之变”的衰落，再到上皇复辟的复杂政局变化。这一部书重点讲述了仁宗、宣宗、英宗和景帝等几位皇帝的统治时期，揭示了明朝在这一阶段的政治局势、军事斗争及其对国家走向的影响。
-
-1. 仁宣之治：明朝短暂的盛世
-仁宗朱高炽的宽政与短暂统治：
-
-仁宗朱高炽是永乐大帝的长子，他在位时间较短（1424-1425年），但其统治风格与父亲截然不同。朱高炽更加温和、注重宽政，推行了一些有利于民生的政策。虽然他没有永乐大帝那样的雄才大略，但其相对宽松的政策使得明朝进入了一段短暂的安定期。
-
-
-宣宗朱瞻基的稳健统治：
-
-朱高炽死后，其子朱瞻基继位为明宣宗。宣宗延续了仁宗的宽政路线，同时他本身也是一位较为开明、智慧的君主。他重视农业，减少税赋，并加强对边疆的防守，史称“仁宣之治”。这一时期，明朝国力较为强盛，社会相对稳定，百姓生活较为安定。
-
-
-宣宗的治国才能：
-
-宣宗统治期间，重用杨士奇等贤臣，整顿吏治，打击贪腐，国家的政治、经济都有了显著的提升。他精简了永乐年间的对外战 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%AC%AC%E4%BA%8C%E9%83%A8%EF%BC%9A%E4%B8%87%E5%9B%BD%E6%9D%A5%E6%9C%9D/" title="《明朝那些事儿》-第二部：万国来朝">《明朝那些事儿》-第二部：万国来朝</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">第二部：万国来朝《明朝那些事儿》第二部《万国来朝》讲述了明朝在永乐大帝朱棣统治下的鼎盛时期，以及永乐年间的重要历史事件、人物和影响。这一部详细描述了靖难之役、永乐大帝的文治武功、郑和下西洋、迁都北京等内容，并分析了明朝在永乐时期的强盛局面以及逐渐走向转折的历史背景。
-
-1. 靖难之役：朱棣的篡位之争
-建文帝的即位与改革：
-
-永乐大帝朱棣本是明太祖朱元璋的第四子。朱元璋去世后，其孙朱允炆继位为建文帝。建文帝即位后，试图削弱藩王的权力，推行“削藩”政策以巩固中央集权。他的这一举措引发了众多藩王的不满，尤其是掌握重兵的燕王朱棣。
-
-
-朱棣的起兵反叛：
-
-朱棣以“清君侧”为名，起兵反对建文帝，发动了靖难之役。经过三年多的激战，朱棣最终攻陷南京，成功推翻建文帝的统治，并自立为永乐帝。靖难之役标志着明朝内部的重大政治转折，朱棣的成功奠定了他在明朝历史上的强大影响力。
-
-
-建文帝的失踪之谜：
-
-建文帝在南京城破后失踪，关于他的下落成为历史谜团。有人认为他已被杀害，有人则认为他逃亡为僧。这个谜团给历史增添了一层神秘色彩，也为永乐帝的统治带来了隐忧。
-
-
-
-
-2. 永乐大帝的文治武功
-迁都北京，巩固北方 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%AC%AC%E4%BA%94%E9%83%A8%EF%BC%9A%E5%B8%9D%E5%9B%BD%E9%A3%98%E6%91%87/" title="《明朝那些事儿》-第五部：帝国飘摇">《明朝那些事儿》-第五部：帝国飘摇</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">第五部：帝国飘摇《明朝那些事儿》第五部《帝国飘摇》主要讲述了明朝晚期从万历帝的中后期到明朝逐渐走向危机的过程。这一时期，虽然明朝国力在万历初期得到了一定的恢复，但由于万历后期的怠政、朝廷内部的腐败、宦官的专权和外部战争的接连爆发，明朝帝国的衰亡之势开始显现。书中详细描绘了万历三大征、东林党与阉党之争以及明末财政危机和社会动荡的局面。
-
-1. 万历帝的长期怠政
-万历初期的繁荣与怠政：
-
-万历帝朱翊钧继位初期，重用内阁首辅张居正进行了一系列财政和政治改革，使得国家在短时间内恢复了繁荣和活力。然而，张居正去世后，万历帝对朝政逐渐失去了兴趣，开始长时间不上朝，史称“万历怠政”。
-
-
-怠政的影响：
-
-万历帝的怠政让明朝的官僚系统和治理能力逐渐崩溃，导致朝廷的权力分散到宦官和权臣手中。皇帝对政治的漠视使得宦官与东林党、文官集团之间的斗争加剧，朝政陷入长期的内耗与混乱。
-
-
-
-
-2. 万历三大征：耗费巨大的战争
-宁夏哱拜之乱（1592年）：
-
-万历时期的第一场重大军事行动是平定宁夏哱拜之乱。哱拜是宁夏镇的副将，因不满被明朝削弱权力而反叛。明朝调动大军，经过数年激战，终于平定叛乱。这场战争虽然维持了边 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/%E7%AC%AC%E5%9B%9B%E9%83%A8%EF%BC%9A%E5%A4%A7%E6%98%8E%E7%8E%8B%E6%9C%9D%E7%9A%84%E5%8D%B1%E5%B1%80/" title="《明朝那些事儿》-第四部：大明王朝的危局">《明朝那些事儿》-第四部：大明王朝的危局</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">第四部：大明王朝的危局《明朝那些事儿》第四部《大明王朝的危局》主要讲述了明朝中后期的一系列重大政治、军事和社会危机，特别是嘉靖帝、隆庆帝和万历帝的统治时期。这一时期，明朝虽然在经济和文化上有所成就，但内部危机不断加深，宦官专权、边境危机、官僚腐败等问题逐渐侵蚀着明朝的根基。通过这一部，作者描绘了明朝由盛转衰的关键时期。
-
-1. 嘉靖帝的统治：道教迷信与大礼议
-嘉靖帝朱厚熜的继位：
-
-嘉靖帝朱厚熜原本是明武宗的堂弟，因武宗无子继位，朝臣们将年仅14岁的朱厚熜迎立为帝，改元嘉靖。由于其继位不是直接承袭父亲的皇位，而是被推上皇位，因此嘉靖帝上任之初便面对一场政治风波，史称大礼议。
-
-
-大礼议事件：
-
-嘉靖帝希望追尊其父为皇帝，但这一要求违背了明朝的宗法制度。以内阁首辅杨廷和为首的大臣强烈反对，导致了朝廷的激烈争论。最终，嘉靖帝通过顽强的政治斗争胜利，不仅追尊了其父，还掌握了实权，开启了长达45年的统治。
-
-
-道教迷信与炼丹：
-
-嘉靖帝笃信道教和炼丹术，长期沉迷于炼制长生不老药。他时常躲在深宫中进行斋戒修道，极少理政，使得朝政大权逐渐落入宦官和权臣之手。宦官刘瑾等人掌握了实权，朝廷开始变得更加 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E6%9B%BE%E5%9B%BD%E8%97%A9%E5%AE%B6%E4%B9%A6/%E3%80%8A%E6%9B%BE%E5%9B%BD%E8%97%A9%E5%AE%B6%E4%B9%A6%E3%80%8B1.%20%E5%AE%B6%E6%97%8F%E7%AE%A1%E7%90%86%E4%B8%8E%E5%AE%B6%E6%95%99/" title="《曾国藩家书》-家族管理与家教">《曾国藩家书》-家族管理与家教</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">《曾国藩家书》中的家族管理与家教部分，集中体现了曾国藩作为家族长者对家庭和家族的深厚责任感和治理智慧。他在家书中深入探讨了家族管理的理念、子孙教育的方式，以及如何保持家族和谐与兴旺。通过这些家书，曾国藩为后代建立了一个系统的家族治理框架，并阐述了他的家教原则。以下是这一部分的详细介绍：
-1. 家风建设曾国藩极为重视家风建设，认为家风是一家之本，决定了家族的兴衰。他在家书中多次强调良好家风的培养和传承，特别注重德行的修养和精神上的传承。
-1.1 家风的核心：修身养性
-德行优先：曾国藩始终强调德行是家族立身的根本。他要求家人无论从事何种职业，首先要培养高尚的品德。他认为，家族成员必须具备正直、诚实、谦逊和勤勉的品格，才能在社会上立足，家庭才能保持长久的兴旺。
-修身的重要性：曾国藩认为，家族的每一位成员都应时刻自我反省，修身养性。他在家书中强调，只有家庭成员每个人都能够严格要求自己，才能为家族带来长远的繁荣。
-
-1.2 重视礼仪与规矩
-家训与规矩的建立：曾国藩非常重视家庭中的礼仪规矩，并通过家书制定了一系列明确的家训和规矩。他认为，家庭中的规矩有助于维护家族秩序，培养成员的纪律意识和自我约束 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E6%9B%BE%E5%9B%BD%E8%97%A9%E5%AE%B6%E4%B9%A6/%E3%80%8A%E6%9B%BE%E5%9B%BD%E8%97%A9%E5%AE%B6%E4%B9%A6%E3%80%8B2.%20%E5%AD%90%E5%A5%B3%E6%95%99%E8%82%B2/" title="《曾国藩家书》-子女教育">《曾国藩家书》-子女教育</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">《曾国藩家书》中的子女教育部分展现了曾国藩作为父亲对子女严格而深刻的教育理念。曾国藩认为，子女的教育不仅仅在于学识的传授，更重要的是德行的培养、志向的树立以及为人处世的智慧。他通过家书教导子女如何修身、立志、读书、为人，并形成了一套极具特色的教育思想。
-以下是详细的介绍：
-1. 立志与修身曾国藩在家书中反复强调，子女教育的首要任务是立志与修身。他认为，没有志向的人难以成才，而修身是成就志向的基础。
-1.1 立志的重要性
-志向决定命运：曾国藩认为，子女若要有所成就，必须先树立明确的志向。他在家书中告诫子孙，要有远大的目标和人生追求，不能满足于一时的安逸和小成。他指出，只有明确的志向才能激发内在的动力，引导子孙不断前进。
-立志的标准：曾国藩要求子女立志要高远，并以国家、家族和社会的利益为目标，而不仅仅追求个人的功名利禄。他强调，子孙的志向应当与时代的发展和社会的需要相契合，这样才能为家族赢得长远的荣耀。
-
-1.2 修身的核心
-德行为先：在曾国藩的教育理念中，修身的首要任务是培养高尚的德行。他认为，无论个人的学识和才能如何，德行才是立身之本。他要求子女时刻反思自己的言行，做到诚实、正直、谦逊 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E6%9B%BE%E5%9B%BD%E8%97%A9%E5%AE%B6%E4%B9%A6/%E3%80%8A%E6%9B%BE%E5%9B%BD%E8%97%A9%E5%AE%B6%E4%B9%A6%E3%80%8B3.%20%E4%B8%BA%E5%AE%98%E4%B9%8B%E9%81%93%E4%B8%8E%E6%B2%BB%E5%9B%BD%E7%90%86%E5%BF%B5/" title="《曾国藩家书》-为官之道与治国理念">《曾国藩家书》-为官之道与治国理念</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">《曾国藩家书》中的为官之道与治国理念部分，全面展现了曾国藩作为晚清名臣在官场的治政智慧和为官处事的原则。这一部分不仅阐述了曾国藩对为官者应具备的德行、责任和担当的深刻认识，也反映了他对于国家治理的宏观思考，以及如何在复杂的官场环境中保持清廉、自律与智慧。
-以下是该部分的详细介绍：
-1. 为官的德行曾国藩认为，为官之道的核心在于德行。他在家书中多次强调，作为官员，首先要有高尚的道德品质，并以身作则。
-1.1 清正廉洁
-反对贪污腐败：曾国藩对贪污腐败深恶痛绝，他认为为官者的腐败是国家衰败的根源之一。在家书中，他多次告诫家人及门生要保持清廉，不为个人利益所动，不贪取不义之财。他认为，唯有清正廉洁，才能赢得民众的信任和尊敬。
-以身作则：曾国藩通过自身的行动展示了清廉为官的榜样。他一生俭朴，家中生活简约，不奢华浪费。他告诫子孙，权力和地位是一时的，唯有清廉和道德才能长久。他在家书中告诫家族中的后辈为官者要坚守清廉自守，不要因为外界的诱惑而动摇自己的信仰。
-
-1.2 为官应有的正直
-刚正不阿：曾国藩认为，为官者必须坚持正直，不偏不倚。他反对官员因私欲或人情关系而屈从于权势或腐败势力，强调正直是立身 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/12/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/#content-inner">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/#content-inner">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/#content-inner">18</a><a class="extend next" rel="next" href="/page/14/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">178</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/01/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E9%BA%A6%E8%82%AF%E9%94%A1%E6%96%B9%E6%B3%95/3.2%20**%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86**%20%20/" title="Untitled">Untitled</a><time datetime="2024-10-01T15:07:30.572Z" title="Created 2024-10-01 15:07:30">2024-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/01/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E9%BA%A6%E8%82%AF%E9%94%A1%E6%96%B9%E6%B3%95/3.3%20**%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%9A%84%E5%90%88%E4%BD%9C**%20%20/" title="Untitled">Untitled</a><time datetime="2024-10-01T15:07:30.572Z" title="Created 2024-10-01 15:07:30">2024-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/01/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E9%BA%A6%E8%82%AF%E9%94%A1%E6%96%B9%E6%B3%95/4.1%20**%E6%8C%81%E7%BB%AD%E5%AD%A6%E4%B9%A0**%20%20/" title="Untitled">Untitled</a><time datetime="2024-10-01T15:07:30.572Z" title="Created 2024-10-01 15:07:30">2024-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/01/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E9%BA%A6%E8%82%AF%E9%94%A1%E6%96%B9%E6%B3%95/4.2%20**%E8%81%8C%E4%B8%9A%E6%88%90%E9%95%BF**%20%20/" title="Untitled">Untitled</a><time datetime="2024-10-01T15:07:30.572Z" title="Created 2024-10-01 15:07:30">2024-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/01/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E9%BA%A6%E8%82%AF%E9%94%A1%E6%96%B9%E6%B3%95/%E3%80%8A%E9%BA%A6%E8%82%AF%E9%94%A1%E6%96%B9%E6%B3%95%E3%80%8B-%E5%A4%A7%E7%BA%B2/" title="Untitled">Untitled</a><time datetime="2024-10-01T15:07:30.572Z" title="Created 2024-10-01 15:07:30">2024-10-01</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">October 2024</span><span class="card-archive-list-count">116</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">September 2024</span><span class="card-archive-list-count">62</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">178</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-10-01T15:07:46.358Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+ ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/12/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/#content-inner">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/#content-inner">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/#content-inner">19</a><a class="extend next" rel="next" href="/page/14/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">187</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/01/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/%E3%80%8A%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A%E3%80%8B-%E5%A4%A7%E7%BA%B2/" title="Untitled">Untitled</a><time datetime="2024-10-01T15:23:09.943Z" title="Created 2024-10-01 15:23:09">2024-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/01/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E9%BA%A6%E8%82%AF%E9%94%A1%E6%96%B9%E6%B3%95/1.1**%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98**%20%20/" title="Untitled">Untitled</a><time datetime="2024-10-01T15:23:09.943Z" title="Created 2024-10-01 15:23:09">2024-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/01/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E9%BA%A6%E8%82%AF%E9%94%A1%E6%96%B9%E6%B3%95/1.2%20**%E7%BB%93%E6%9E%84%E5%8C%96%E6%80%9D%E7%BB%B4**%20%20/" title="Untitled">Untitled</a><time datetime="2024-10-01T15:23:09.943Z" title="Created 2024-10-01 15:23:09">2024-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/01/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E9%BA%A6%E8%82%AF%E9%94%A1%E6%96%B9%E6%B3%95/1.3%20**%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%86%B3%E7%AD%96**%20%20%20/" title="Untitled">Untitled</a><time datetime="2024-10-01T15:23:09.943Z" title="Created 2024-10-01 15:23:09">2024-10-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/01/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E9%BA%A6%E8%82%AF%E9%94%A1%E6%96%B9%E6%B3%95/1.4%20**%E5%81%87%E8%AE%BE%E9%A9%B1%E5%8A%A8%E6%B3%95**%20%20/" title="Untitled">Untitled</a><time datetime="2024-10-01T15:23:09.943Z" title="Created 2024-10-01 15:23:09">2024-10-01</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">October 2024</span><span class="card-archive-list-count">125</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">September 2024</span><span class="card-archive-list-count">62</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">187</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-10-01T15:23:23.365Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
