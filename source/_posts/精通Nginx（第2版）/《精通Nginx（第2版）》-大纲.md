@@ -1,5 +1,5 @@
 ---
-title: "《精通Nginx（第2版）》-大纲"
+title: "《精通Nginx（第2版）》-《精通Nginx（第2版）》-大纲"
 date: 2024-09-28
 tags:
 ---
