@@ -13,7 +13,16 @@ tags: ${tags.join(', ')}
 `;
 
 // 获取当前日期
-const currentDate = '2024-09-28'; // 可以根据需要动态生成
+
+const date = new Date(2024, 8, 28); // 这里的月份是基于 0 的，8 表示 9 月
+const year = date.getFullYear();
+const month = String(date.getMonth() + 1).padStart(2, '0'); // 月份从 0 开始，所以需要 +1，确保有两位数
+const day = String(date.getDate()).padStart(2, '0'); // 确保日期是两位数
+
+const formattedDate = `${year}-${month}-${day}`;
+console.log(formattedDate); // 输出 "2024-09-28"
+
+const currentDate = formattedDate; // 可以根据需要动态生成
 
 // 读取当前目录中的所有文件
 fs.readdir(process.cwd(), (err, files) => {
