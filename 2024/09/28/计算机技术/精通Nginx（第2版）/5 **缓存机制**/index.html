@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>《精通Nginx（第2版）》-5 **缓存机制** | 被认知圈养</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在Nginx的《缓存机制》章节中，主要介绍了如何使用Nginx的缓存功能来提升性能、减少后端服务器的负载以及加快响应速度。Nginx的缓存机制支持多种形式，如代理缓存（Proxy Cache）、FastCGI缓存（FastCGI Cache）等，可以根据不同的应用场景进行配置。 以下是该章节的详细介绍： 1. Nginx缓存的基本概念Nginx的缓存机制是指Nginx将后端服务器的响应结果（如静态">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《精通Nginx（第2版）》-5 **缓存机制**">
+<meta property="og:url" content="https://hubei2023.github.io/2024/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/5%20**%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6**/index.html">
+<meta property="og:site_name" content="被认知圈养">
+<meta property="og:description" content="在Nginx的《缓存机制》章节中，主要介绍了如何使用Nginx的缓存功能来提升性能、减少后端服务器的负载以及加快响应速度。Nginx的缓存机制支持多种形式，如代理缓存（Proxy Cache）、FastCGI缓存（FastCGI Cache）等，可以根据不同的应用场景进行配置。 以下是该章节的详细介绍： 1. Nginx缓存的基本概念Nginx的缓存机制是指Nginx将后端服务器的响应结果（如静态">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://hubei2023.github.io/img/butterfly-icon.png">
+<meta property="article:published_time" content="2024-09-28T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-10-04T13:29:20.582Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hubei2023.github.io/img/butterfly-icon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://hubei2023.github.io/2024/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/5%20**%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6**/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '《精通Nginx（第2版）》-5 **缓存机制**',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-04 13:29:20'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/butterfly-icon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">374</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="被认知圈养"><span class="site-name">被认知圈养</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">《精通Nginx（第2版）》-5 **缓存机制**</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-10-04T13:29:20.582Z" title="Updated 2024-10-04 13:29:20">2024-10-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="《精通Nginx（第2版）》-5 **缓存机制**"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>在Nginx的《缓存机制》章节中，主要介绍了如何使用Nginx的缓存功能来提升性能、减少后端服务器的负载以及加快响应速度。Nginx的缓存机制支持多种形式，如代理缓存（Proxy Cache）、FastCGI缓存（FastCGI Cache）等，可以根据不同的应用场景进行配置。</p>
+<p>以下是该章节的详细介绍：</p>
+<h3 id="1-Nginx缓存的基本概念"><a href="#1-Nginx缓存的基本概念" class="headerlink" title="1. Nginx缓存的基本概念"></a>1. <strong>Nginx缓存的基本概念</strong></h3><p>Nginx的缓存机制是指Nginx将后端服务器的响应结果（如静态文件或动态页面的HTML内容）缓存到本地磁盘或内存中，下一次客户端请求相同资源时，Nginx可以直接返回缓存的结果，而不需要请求后端服务器。这大大减少了后端服务器的负载，同时加快了响应速度。</p>
+<p>缓存机制的核心目的是：</p>
+<ul>
+<li><strong>降低后端服务器的负载</strong>：减少对数据库或应用服务器的重复请求，特别适用于动态内容频繁变化的应用。</li>
+<li><strong>提高用户访问速度</strong>：通过缓存常用的资源，减少延迟。</li>
+<li><strong>提升系统性能</strong>：在高并发情况下，Nginx通过缓存机制可以应对大量的请求，而无需每次都请求后端服务。</li>
+</ul>
+<h3 id="2-缓存的工作原理"><a href="#2-缓存的工作原理" class="headerlink" title="2. 缓存的工作原理"></a>2. <strong>缓存的工作原理</strong></h3><p>当Nginx收到客户端的请求时，它首先检查缓存中是否已经存在相应的资源。如果资源存在且仍然有效，Nginx会直接将缓存中的数据返回给客户端，而不必请求后端服务器。如果缓存中没有相应的资源，Nginx会将请求转发给后端服务器，获取响应后将其保存到缓存中，供下次请求使用。</p>
+<p>缓存的生命周期如下：</p>
+<ol>
+<li><strong>请求到达Nginx</strong>：Nginx收到客户端请求，检查缓存中是否已有相应的资源。</li>
+<li><strong>检查缓存是否可用</strong>：如果缓存存在且没有过期，直接返回缓存结果；否则将请求转发到后端。</li>
+<li><strong>更新缓存</strong>：如果缓存不存在或者已过期，Nginx从后端服务器获取新的数据并更新缓存。</li>
+</ol>
+<h3 id="3-配置Nginx代理缓存"><a href="#3-配置Nginx代理缓存" class="headerlink" title="3. 配置Nginx代理缓存"></a>3. <strong>配置Nginx代理缓存</strong></h3><h4 id="3-1-基本的代理缓存配置"><a href="#3-1-基本的代理缓存配置" class="headerlink" title="3.1 基本的代理缓存配置"></a>3.1 基本的代理缓存配置</h4><p>Nginx的代理缓存功能通过<code>proxy_cache</code>指令配置，可以将后端服务器的响应结果缓存到本地，以减少重复的请求。</p>
+<ul>
+<li><p><strong>示例配置</strong>：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">    <span class="attribute">proxy_cache_path</span> /data/nginx/cache levels=<span class="number">1</span>:<span class="number">2</span> keys_zone=my_cache:<span class="number">10m</span> max_size=<span class="number">1g</span> inactive=<span class="number">60m</span> use_temp_path=<span class="literal">off</span>;</span><br><span class="line"></span><br><span class="line">    <span class="section">server</span> &#123;</span><br><span class="line">        <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">        <span class="attribute">server_name</span> example.com;</span><br><span class="line"></span><br><span class="line">        <span class="section">location</span> / &#123;</span><br><span class="line">            <span class="attribute">proxy_cache</span> my_cache;</span><br><span class="line">            <span class="attribute">proxy_cache_valid</span> <span class="number">200</span> <span class="number">302</span> <span class="number">10m</span>;</span><br><span class="line">            <span class="attribute">proxy_cache_valid</span> <span class="number">404</span> <span class="number">1m</span>;</span><br><span class="line">            <span class="attribute">proxy_pass</span> http://backend;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">            <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>解释</strong>：</p>
+<ul>
+<li><p>**<code>proxy_cache_path</code>**：定义缓存的存储路径、缓存区域、最大缓存大小等参数。</p>
+<ul>
+<li>**<code>/data/nginx/cache</code>**：缓存文件存储的路径。</li>
+<li>**<code>levels=1:2</code>**：缓存文件的子目录层级，帮助避免大量缓存文件存储在一个目录中，提高文件系统的效率。</li>
+<li>**<code>keys_zone=my_cache:10m</code>**：定义缓存区域的名称（<code>my_cache</code>）和大小（10MB），用于存储缓存的键值对。</li>
+<li>**<code>max_size=1g</code>**：缓存最大占用空间为1GB。</li>
+<li>**<code>inactive=60m</code>**：缓存中的数据如果在60分钟内没有被访问，则被自动删除。</li>
+<li>**<code>use_temp_path=off</code>**：关闭临时路径的使用，直接将缓存文件写入最终位置。</li>
+</ul>
+</li>
+<li><p>**<code>proxy_cache</code>**：启用缓存机制并指定缓存区域<code>my_cache</code>。</p>
+</li>
+<li><p>**<code>proxy_cache_valid</code>**：定义不同响应码的缓存时间。</p>
+<ul>
+<li>**<code>200 302 10m</code>**：表示HTTP状态码为200或302的响应将被缓存10分钟。</li>
+<li>**<code>404 1m</code>**：表示HTTP状态码为404的响应将被缓存1分钟。</li>
+</ul>
+</li>
+<li><p>**<code>proxy_pass</code>**：将请求转发到后端服务器（如<code>http://backend</code>）。</p>
+</li>
+<li><p>**<code>proxy_set_header</code>**：传递客户端的请求头信息，如客户端IP和协议等。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-2-控制缓存的条件"><a href="#3-2-控制缓存的条件" class="headerlink" title="3.2 控制缓存的条件"></a>3.2 控制缓存的条件</h4><p>在某些情况下，您可能需要更灵活地控制缓存。例如，可以根据特定的请求头或响应头来决定是否缓存某些请求。</p>
+<ul>
+<li><p><strong>不缓存特定请求</strong>：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">    <span class="attribute">proxy_cache</span> my_cache;</span><br><span class="line">    <span class="attribute">proxy_no_cache</span> <span class="variable">$http_pragma</span>;</span><br><span class="line">    <span class="attribute">proxy_no_cache</span> <span class="variable">$http_authorization</span>;</span><br><span class="line">    <span class="attribute">proxy_cache_bypass</span> <span class="variable">$http_pragma</span>;</span><br><span class="line">    <span class="attribute">proxy_cache_bypass</span> <span class="variable">$http_authorization</span>;</span><br><span class="line">    <span class="attribute">proxy_pass</span> http://backend;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>**<code>proxy_no_cache</code>**：根据条件决定哪些请求不进行缓存。此示例中，<code>$http_pragma</code>和<code>$http_authorization</code>这两个请求头存在时，Nginx不会缓存响应。</li>
+<li>**<code>proxy_cache_bypass</code>**：当满足条件时，Nginx跳过缓存，直接从后端服务器获取内容。</li>
+</ul>
+</li>
+<li><p><strong>按请求方法控制缓存</strong>：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">    <span class="attribute">proxy_cache</span> my_cache;</span><br><span class="line">    <span class="attribute">proxy_cache_methods</span> GET HEAD;</span><br><span class="line">    <span class="attribute">proxy_pass</span> http://backend;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>**<code>proxy_cache_methods</code>**：指定仅缓存<code>GET</code>和<code>HEAD</code>方法的请求。通常不会缓存<code>POST</code>请求。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-3-清理缓存"><a href="#3-3-清理缓存" class="headerlink" title="3.3 清理缓存"></a>3.3 清理缓存</h4><p>Nginx不会自动清理缓存中过期的文件，您可以通过第三方工具如<code>nginx-cache-purge</code>或手动删除缓存目录下的文件来清理缓存。</p>
+<h3 id="4-FastCGI缓存"><a href="#4-FastCGI缓存" class="headerlink" title="4. FastCGI缓存"></a>4. <strong>FastCGI缓存</strong></h3><p>除了代理缓存，Nginx还支持FastCGI缓存，用于缓存通过FastCGI协议（如PHP-FPM）处理的动态内容。这在处理大量动态请求时非常有用。</p>
+<h4 id="4-1-基本的FastCGI缓存配置"><a href="#4-1-基本的FastCGI缓存配置" class="headerlink" title="4.1 基本的FastCGI缓存配置"></a>4.1 基本的FastCGI缓存配置</h4><ul>
+<li><p><strong>示例配置</strong>：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">    <span class="attribute">fastcgi_cache_path</span> /data/nginx/fastcgi_cache levels=<span class="number">1</span>:<span class="number">2</span> keys_zone=php_cache:<span class="number">10m</span> inactive=<span class="number">60m</span>;</span><br><span class="line"></span><br><span class="line">    <span class="section">server</span> &#123;</span><br><span class="line">        <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">        <span class="attribute">server_name</span> example.com;</span><br><span class="line"></span><br><span class="line">        <span class="section">location</span> <span class="regexp">~ \.php$</span> &#123;</span><br><span class="line">            <span class="attribute">fastcgi_pass</span> <span class="number">127.0.0.1:9000</span>;</span><br><span class="line">            <span class="attribute">fastcgi_cache</span> php_cache;</span><br><span class="line">            <span class="attribute">fastcgi_cache_valid</span> <span class="number">200</span> <span class="number">10m</span>;</span><br><span class="line">            <span class="attribute">fastcgi_cache_valid</span> <span class="number">404</span> <span class="number">1m</span>;</span><br><span class="line">            <span class="attribute">fastcgi_cache_use_stale</span> <span class="literal">error</span> timeout invalid_header;</span><br><span class="line">            <span class="attribute">include</span> fastcgi_params;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>解释</strong>：</p>
+<ul>
+<li>**<code>fastcgi_cache_path</code>**：定义FastCGI缓存的存储路径及相关配置。</li>
+<li>**<code>fastcgi_cache</code>**：启用FastCGI缓存并指定缓存区域。</li>
+<li>**<code>fastcgi_cache_valid</code>**：定义哪些响应码将被缓存及缓存的时间。</li>
+<li>**<code>fastcgi_cache_use_stale</code>**：当后端服务器返回错误时，使用缓存中的旧数据代替。<ul>
+<li>**<code>error timeout invalid_header</code>**：表示在发生错误、超时或收到无效响应头时，使用缓存中的旧数据。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-2-FastCGI缓存与代理缓存的区别"><a href="#4-2-FastCGI缓存与代理缓存的区别" class="headerlink" title="4.2 FastCGI缓存与代理缓存的区别"></a>4.2 FastCGI缓存与代理缓存的区别</h4><ul>
+<li><strong>代理缓存</strong>：主要用于缓存反向代理到后端服务器的响应。适用于任何类型的后端服务器，如HTTP服务器或API服务。</li>
+<li><strong>FastCGI缓存</strong>：专门用于缓存通过FastCGI协议（如PHP）的响应。适合处理动态内容，如PHP页面。</li>
+</ul>
+<h3 id="5-缓存控制指令"><a href="#5-缓存控制指令" class="headerlink" title="5. 缓存控制指令"></a>5. <strong>缓存控制指令</strong></h3><h4 id="5-1-缓存控制HTTP头"><a href="#5-1-缓存控制HTTP头" class="headerlink" title="5.1 缓存控制HTTP头"></a>5.1 缓存控制HTTP头</h4><p>在某些情况下，您可能需要通过HTTP头来控制缓存。例如，您可以通过<code>Cache-Control</code>、<code>Expires</code>头来通知客户端或中间代理服务器如何缓存内容。</p>
+<ul>
+<li><p>**<code>Cache-Control</code>**：控制缓存行为，常见的指令有：</p>
+<ul>
+<li>**<code>Cache-Control: no-cache</code>**：强制每次请求都必须从服务器获取最新的资源。</li>
+<li>**<code>Cache-Control: public</code>**：允许所有中间缓存服务器缓存资源。</li>
+<li>**<code>Cache-Control: private</code>**：仅允许客户端缓存资源。</li>
+</ul>
+</li>
+<li><p>**<code>Expires</code>**：设置资源过期的时间点。例如：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">location</span> /images/ &#123;</span><br><span class="line">    <span class="attribute">expires</span> <span class="number">30d</span>;</span><br><span class="line">    <span class="attribute">add_header</span> Cache-Control <span class="string">&quot;public&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="5-2-通过add-header设置缓存头"><a href="#5-2-通过add-header设置缓存头" class="headerlink" title="5.2 通过add_header设置缓存头"></a>5.2 通过<code>add_header</code>设置缓存头</h4><p>Nginx允许通过<code>add_header</code>指令为响应添加自定义的HTTP头，例如设置缓存控制的头部信息。</p>
+<ul>
+<li><strong>示例</strong>：<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="section">location</span> /static/ &#123;</span><br><span class="line">      <span class="attribute">root</span> /var/www/static;</span><br><span class="line">      <span class="attribute">expires</span> <span class="number">7d</span>;</span><br><span class="line">      <span class="attribute">add_header</span> Cache-Control <span class="string">&quot;public, max-age=604800</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>**<code>expires 7d</code>**：设置静态文件的缓存过期时间为7天。</li>
+<li>**<code>add_header Cache-Control &quot;public, max-age=604800&quot;</code>**：为响应添加<code>Cache-Control</code>头，允许客户端和代理服务器缓存该文件，<code>max-age=604800</code>表示缓存的最大生存时间为604800秒（7天）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-缓存的高级设置"><a href="#6-缓存的高级设置" class="headerlink" title="6. 缓存的高级设置"></a>6. <strong>缓存的高级设置</strong></h3><h4 id="6-1-缓存更新与并发请求"><a href="#6-1-缓存更新与并发请求" class="headerlink" title="6.1 缓存更新与并发请求"></a>6.1 缓存更新与并发请求</h4><p>Nginx可以通过<code>proxy_cache_lock</code>来处理当多个客户端同时请求一个未缓存的资源时，避免所有请求都同时向后端服务器发起。</p>
+<ul>
+<li><strong>示例配置</strong>：<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">    <span class="attribute">proxy_cache</span> my_cache;</span><br><span class="line">    <span class="attribute">proxy_cache_lock</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">proxy_cache_lock_timeout</span> <span class="number">5s</span>;</span><br><span class="line">    <span class="attribute">proxy_pass</span> http://backend;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>**<code>proxy_cache_lock</code>**：开启缓存锁机制，确保当多个请求同时请求一个未缓存的资源时，只有第一个请求会到达后端服务器，其他请求等待第一个请求完成后直接使用缓存的结果。</li>
+<li>**<code>proxy_cache_lock_timeout</code>**：设置缓存锁的超时时间。</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-2-限制缓存大小"><a href="#6-2-限制缓存大小" class="headerlink" title="6.2 限制缓存大小"></a>6.2 限制缓存大小</h4><p>为了防止缓存占用过多的磁盘空间，Nginx可以通过<code>max_size</code>参数限制缓存的最大大小。</p>
+<ul>
+<li><strong>示例</strong>：<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">proxy_cache_path</span> /data/nginx/cache levels=<span class="number">1</span>:<span class="number">2</span> keys_zone=my_cache:<span class="number">10m</span> max_size=<span class="number">500m</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>**<code>max_size=500m</code>**：设置缓存最大占用空间为500MB。当缓存达到这个限制时，Nginx将自动清除最久未使用的缓存数据。</li>
+</ul>
+</li>
+</ul>
+<h3 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h3><p>通过这一章节的学习，读者可以掌握如何配置Nginx的缓存机制，包括代理缓存和FastCGI缓存的基本配置、缓存控制以及如何灵活使用缓存来提升性能。Nginx的缓存功能为高流量、高并发的应用场景提供了有效的优化手段，大大减轻了后端服务器的负担并加快了响应时间。这对于提升网站的用户体验和服务器的稳定性非常有帮助。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://hubei2023.github.io">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://hubei2023.github.io/2024/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/5%20**%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6**/">https://hubei2023.github.io/2024/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/5%20**%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6**/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/4%20**%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1**/" title="《精通Nginx（第2版）》-4 **反向代理与负载均衡**"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">《精通Nginx（第2版）》-4 **反向代理与负载均衡**</div></div></a></div><div class="next-post pull-right"><a href="/2024/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/6%20**%E5%AE%89%E5%85%A8%E4%B8%8E%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6**/" title="《精通Nginx（第2版）》-6 **安全与访问控制**"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">《精通Nginx（第2版）》-6 **安全与访问控制**</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">374</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Nginx%E7%BC%93%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">1. Nginx缓存的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BC%93%E5%AD%98%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">2. 缓存的工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AENginx%E4%BB%A3%E7%90%86%E7%BC%93%E5%AD%98"><span class="toc-number">3.</span> <span class="toc-text">3. 配置Nginx代理缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%BB%A3%E7%90%86%E7%BC%93%E5%AD%98%E9%85%8D%E7%BD%AE"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 基本的代理缓存配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E6%8E%A7%E5%88%B6%E7%BC%93%E5%AD%98%E7%9A%84%E6%9D%A1%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 控制缓存的条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E6%B8%85%E7%90%86%E7%BC%93%E5%AD%98"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 清理缓存</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-FastCGI%E7%BC%93%E5%AD%98"><span class="toc-number">4.</span> <span class="toc-text">4. FastCGI缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E5%9F%BA%E6%9C%AC%E7%9A%84FastCGI%E7%BC%93%E5%AD%98%E9%85%8D%E7%BD%AE"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 基本的FastCGI缓存配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-FastCGI%E7%BC%93%E5%AD%98%E4%B8%8E%E4%BB%A3%E7%90%86%E7%BC%93%E5%AD%98%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 FastCGI缓存与代理缓存的区别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E7%BC%93%E5%AD%98%E6%8E%A7%E5%88%B6%E6%8C%87%E4%BB%A4"><span class="toc-number">5.</span> <span class="toc-text">5. 缓存控制指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E7%BC%93%E5%AD%98%E6%8E%A7%E5%88%B6HTTP%E5%A4%B4"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 缓存控制HTTP头</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E9%80%9A%E8%BF%87add-header%E8%AE%BE%E7%BD%AE%E7%BC%93%E5%AD%98%E5%A4%B4"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 通过add_header设置缓存头</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E7%BC%93%E5%AD%98%E7%9A%84%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE"><span class="toc-number">6.</span> <span class="toc-text">6. 缓存的高级设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E7%BC%93%E5%AD%98%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%B9%B6%E5%8F%91%E8%AF%B7%E6%B1%82"><span class="toc-number">6.1.</span> <span class="toc-text">6.1 缓存更新与并发请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E9%99%90%E5%88%B6%E7%BC%93%E5%AD%98%E5%A4%A7%E5%B0%8F"><span class="toc-number">6.2.</span> <span class="toc-text">6.2 限制缓存大小</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93%EF%BC%9A"><span class="toc-number">7.</span> <span class="toc-text">小结：</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/04/%E9%9D%9E%E6%8A%80%E6%9C%AF%E4%B9%A6%E7%B1%8D/%E8%AF%BB%E4%B9%A6%E4%B9%A6%E5%8D%95/" title="读书书单">读书书单</a><time datetime="2024-10-04T13:29:20.583Z" title="Created 2024-10-04 13:29:20">2024-10-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/04/%E8%89%BA%E6%9C%AF/%E7%94%B5%E5%BD%B1-%E5%8D%8E%E8%A1%A8%E5%A5%96/" title="电影-华表奖">电影-华表奖</a><time datetime="2024-10-04T13:29:20.581Z" title="Created 2024-10-04 13:29:20">2024-10-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/04/%E8%89%BA%E6%9C%AF/%E7%94%B5%E5%BD%B1-%E5%A5%A5%E6%96%AF%E5%8D%A1/" title="电影-奥斯卡">电影-奥斯卡</a><time datetime="2024-10-04T13:29:20.581Z" title="Created 2024-10-04 13:29:20">2024-10-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/28/%E5%B0%8F%E8%AF%B4/%E5%82%B2%E6%85%A2%E4%B8%8E%E5%81%8F%E8%A7%81/" title="傲慢与偏见">傲慢与偏见</a><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/28/%E5%B0%8F%E8%AF%B4/%E6%9C%88%E4%BA%AE%E5%92%8C%E5%85%AD%E4%BE%BF%E5%A3%AB/" title="月亮和六便士">月亮和六便士</a><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
