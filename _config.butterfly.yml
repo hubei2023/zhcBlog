@@ -1,1094 +1,342 @@
-# --------------------------------------
-# Hexo Butterfly Theme Configuration
-# If you have any questions, please refer to the documentation
-# Chinese: https://butterfly.js.org/
-# English: https://butterfly.js.org/en/
-# --------------------------------------
-
-# --------------------------------------
-# Navigation Settings
-# --------------------------------------
-
-nav:
-  # Navigation bar logo image
-  logo:
-  display_title: true
-  # Whether to fix navigation bar
-  fixed: false
-
 menu:
   Home: / || fas fa-home
-  
-
-# --------------------------------------
-# Code Blocks Settings
-
-
-# --------------------------------------
-
-code_blocks:
-  # Code block theme: darker / pale night / light / ocean / false
-  theme: light
-  macStyle: false
-  # Code block height limit (unit: px)
-  height_limit: false
-  word_wrap: false
-
-  # Toolbar
-  copy: true
-  language: true
-  # true: shrink the code blocks | false: expand the code blocks | none: expand code blocks and hide the button
-  shrink: false
-  fullpage: false
-
-# Social media links
-# Formal:
-#   icon: link || the description || color
-social:
-  # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
-
-# --------------------------------------
-# Image Settings
-# --------------------------------------
-
-favicon: /img/favicon.png
-
-avatar:
-  img: /img/butterfly-icon.png
-  effect: false
-
-# Disable all banner images
-disable_top_img: false
-
-# If the banner of page not setting, it will show the default_top_img
-default_top_img:
-
-# The banner image of index page
-index_img:
-
-# The banner image of archive page
-archive_img:
-
-# Note: tag page, not tags page
-tag_img:
-
-# The banner image of tag page, you can set the banner image for each tag
-# Format:
-#  - tag name: xxxxx
-tag_per_img:
-
-# Note: category page, not categories page
-category_img:
-
-# The banner image of category page, you can set the banner image for each category
-# Format:
-#  - category name: xxxxx
-category_per_img:
-
-# The background image of footer
-footer_img: false
-
-# Website Background
-# Can set it to color or image url
-background:
-
-cover:
-  # Disable the cover or not
-  index_enable: true
-  aside_enable: true
-  archives_enable: true
-  # When cover is not set, the default cover is displayed
-  default_cover:
-    # - xxx.jpg
-
-# Replace Broken Images
-error_img:
-  flink: /img/friend_404.gif
-  post_page: /img/404.jpg
-
-# A simple 404 page
-error_404:
-  enable: false
-  subtitle: 'Page Not Found'
-  background: /img/error-page.png
-
-post_meta:
-  # Home Page
-  page:
-    # Choose: created / updated / both
-    date_type: created
-    # Choose: date / relative
-    date_format: date
-    categories: true
-    tags: false
-    label: true
-  post:
-    # Choose: left / center
-    position: left
-    # Choose: created / updated / both
-    date_type: both
-    # Choose: date / relative
-    date_format: date
-    categories: true
-    tags: true
-    label: true
-
-# --------------------------------------
-# Index page settings
-# --------------------------------------
-
-# The top_img settings of home page
-# default: top img - full screen, site info - middle
-# The position of site info, eg: 300px/300em/300rem/10%
-index_site_info_top:
-# The height of top_img, eg: 300px/300em/300rem
-index_top_img_height:
-
-# The subtitle on homepage
-subtitle:
-  enable: false
-  # Typewriter Effect
-  effect: true
-  # Customize typed.js
-  # https://github.com/mattboldt/typed.js/#customization
-  typed_option:
-  # Source - Call the third-party service API (Chinese only)
-  # It will show the source first, then show the content of sub
-  # Choose: false/1/2/3
-  # false - disable the function
-  # 1 - hitokoto.cn
-  # 2 - yijuzhan.com
-  # 3 - jinrishici.com
-  source: false
-  # If you close the typewriter effect, the subtitle will only show the first line of sub
-  sub:
-
-# Article layout on the homepage
-# 1: Cover on the left, info on the right
-# 2: Cover on the right, info on the left
-# 3: Cover and info alternate between left and right
-# 4: Cover on top, info on the bottom
-# 5: Info displayed on the cover
-# 6: Masonry layout - Cover on top, info on the bottom
-# 7: Masonry layout - Info displayed on the cover
-index_layout: 3
-
-# Display the article introduction on homepage
-# 1: description
-# 2: both (if the description exists, it will show description, or show the auto_excerpt)
-# 3: auto_excerpt (default)
-# false: do not show the article introduction
-index_post_content:
-  method: 3
-  # If you set method to 2 or 3, the length need to config
-  length: 500
-
-# --------------------------------------
-# Post Settings
-# --------------------------------------
-
-toc:
-  post: true
-  page: false
-  number: true
-  expand: false
-  # Only for post
-  style_simple: false
-  scroll_percent: true
-
-post_copyright:
-  enable: true
-  decode: false
-  author_href:
-  license: CC BY-NC-SA 4.0
-  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
-
-# Sponsor/reward
-reward:
-  enable: false
-  text:
-  QR_code:
-    # - img: /img/wechat.jpg
-    #   link:
-    #   text: wechat
-    # - img: /img/alipay.jpg
-    #   link:
-    #   text: alipay
-
-# Post edit
-# Easily browse and edit blog source code online.
-post_edit:
-  enable: false
-  # url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/
-  # For example: https://github.com/jerryc127/butterfly.js.org/edit/main/source/
-  url:
-
-# Related Articles
-related_post:
-  enable: true
-  # Number of posts displayed
-  limit: 6
-  # Choose: created / updated
-  date_type: created
-
-# Choose: 1 / 2 / false
-# 1: The 'next post' will link to old post
-# 2: The 'next post' will link to new post
-# false: disable pagination
-post_pagination: 1
-
-# Displays outdated notice for a post
-noticeOutdate:
-  enable: false
-  # Style: simple / flat
-  style: flat
-  # When will it be shown
-  limit_day: 365
-  # Position: top / bottom
-  position: top
-  message_prev: It has been
-  message_next: days since the last update, the content of the article may be outdated.
-
-# --------------------------------------
-# Footer Settings
-# --------------------------------------
-footer:
-  owner:
-    enable: true
-    since: 2019
-  custom_text:
-  # Copyright of theme and framework
-  copyright: true
-
-# --------------------------------------
-# Aside Settings
-# --------------------------------------
-
-aside:
-  enable: true
-  hide: false
-  # Show the button to hide the aside in bottom right button
-  button: true
-  mobile: true
-  # Position: left / right
-  position: right
-  display:
-    archive: true
-    tag: true
-    category: true
-  card_author:
-    enable: true
-    description:
-    button:
-      enable: true
-      icon: fab fa-github
-      text: Follow Me
-      link: https://github.com/xxxxxx
-  card_announcement:
-    enable: true
-    content: This is my Blog
-  card_recent_post:
-    enable: true
-    # If set 0 will show all
-    limit: 5
-    # Sort: date / updated
-    sort: date
-    sort_order:
-  card_newest_comments:
-    enable: false
-    sort_order:
-    limit: 6
-    # Unit: mins, save data to localStorage
-    storage: 10
-    avatar: true
-  card_categories:
-    enable: true
-    # If set 0 will show all
-    limit: 8
-    # Choose: none / true / false
-    expand: none
-    sort_order:
-  card_tags:
-    enable: true
-    # If set 0 will show all
-    limit: 40
-    color: false
-    # Order of tags, random/name/length
-    orderby: random
-    # Sort of order. 1, asc for ascending; -1, desc for descending
-    order: 1
-    sort_order:
-  card_archives:
-    enable: true
-    # Type: monthly / yearly
-    type: monthly
-    # Eg: YYYY年MM月
-    format: MMMM YYYY
-    # Sort of order. 1, asc for ascending; -1, desc for descending
-    order: -1
-    # If set 0 will show all
-    limit: 8
-    sort_order:
-  card_post_series:
-    enable: true
-    # The title shows the series name
-    series_title: false
-    # Order by title or date
-    orderBy: 'date'
-    # Sort of order. 1, asc for ascending; -1, desc for descending
-    order: -1
-  card_webinfo:
-    enable: true
-    post_count: true
-    last_push_date: true
-    sort_order:
-    # Time difference between publish date and now
-    # Formal: Month/Day/Year Time or Year/Month/Day Time
-    # Leave it empty if you don't enable this feature
-    runtime_date:
-
-# --------------------------------------
-# Bottom right button
-# --------------------------------------
-
-# The distance between the bottom right button and the bottom (default unit: px)
-rightside_bottom:
-
-# Conversion between Traditional and Simplified Chinese
-translate:
-  enable: false
-  # The text of a button
-  default: 繁
-  # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
-  defaultEncoding: 2
-  # Time delay
-  translateDelay: 0
-  # The text of the button when the language is Simplified Chinese
-  msgToTraditionalChinese: '繁'
-  # The text of the button when the language is Traditional Chinese
-  msgToSimplifiedChinese: '簡'
-
-# Read Mode
-readmode: true
-
-# Dark Mode
-darkmode:
-  enable: true
-  # Toggle Button to switch dark/light mode
-  button: true
-  # Switch dark/light mode automatically
-  # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
-  # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
-  # autoChangeMode: false
-  autoChangeMode: false
-  # Set the light mode time. The value is between 0 and 24. If not set, the default value is 6 and 18
-  start:
-  end:
-
-# Show scroll percent in scroll-to-top button
-rightside_scroll_percent: false
-
-# Don't modify the following settings unless you know how they work
-# Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
-# Don't repeat the same value
-rightside_item_order:
-  enable: false
-  # Default: readmode,translate,darkmode,hideAside
-  hide:
-  # Default: toc,chat,comment
-  show:
-
-# --------------------------------------
-# Global Settings
-# --------------------------------------
-
-anchor:
-  # When you scroll, the URL will update according to header id.
-  auto_update: false
-  # Click the headline to scroll and update the anchor
-  click_to_scroll: false
-
-photofigcaption: false
-
-copy:
-  enable: true
-  # Add the copyright information after copied content
-  copyright:
-    enable: false
-    limit_count: 150
-
-# Need to install the hexo-wordcount plugin
-wordcount:
-  enable: false
-  # Display the word count of the article in post meta
-  post_wordcount: true
-  # Display the time to read the article in post meta
-  min2read: true
-  # Display the total word count of the website in aside's webinfo
-  total_wordcount: true
-
-# Busuanzi count for PV / UV in site
-busuanzi:
-  site_uv: true
-  site_pv: true
-  page_pv: true
-
-# --------------------------------------
-# Math
-# --------------------------------------
-
-# About the per_page
-# if you set it to true, it will load mathjax/katex script in each page
-# if you set it to false, it will load mathjax/katex script according to your setting (add the 'mathjax: true' or 'katex: true' in page's front-matter)
-math:
-  # Choose: mathjax, katex
-  # Leave it empty if you don't need math
-  use:
-  per_page: true
-  hide_scrollbar: false
-
-  mathjax:
-    # Enable the contextual menu
-    enableMenu: true
-    # Choose: all / ams / none, This controls whether equations are numbered and how
-    tags: none
-
-  katex:
-    # Enable the copy KaTeX formula
-    copy_tex: false
-
-# --------------------------------------
-# Search
-# --------------------------------------
-
-search:
-  # Choose: algolia_search / local_search / docsearch
-  # leave it empty if you don't need search
-  use:
-  placeholder:
-
-  # Algolia Search
-  algolia_search:
-    # Number of search results per page
-    hitsPerPage: 6
-
-  # Local Search
-  local_search:
-    # Preload the search data when the page loads.
-    preload: false
-    # Show top n results per article, show all results by setting to -1
-    top_n_per_article: 1
-    # Unescape html strings to the readable one.
-    unescape: false
-    CDN:
-
-  # Docsearch
-  # https://docsearch.algolia.com/
-  docsearch:
-    appId:
-    apiKey:
-    indexName:
-    option:
-
-# --------------------------------------
-# Share System
-# --------------------------------------
-
-share:
-  # Choose: sharejs / addtoany
-  # Leave it empty if you don't need share
-  use: sharejs
-
-  # Share.js
-  # https://github.com/overtrue/share.js
-  sharejs:
-    sites: facebook,twitter,wechat,weibo,qq
-
-  # AddToAny
-  # https://www.addtoany.com/
-  addtoany:
-    item: facebook,twitter,wechat,sina_weibo,facebook_messenger,email,copy_link
-
-# --------------------------------------
-# Comments System
-# --------------------------------------
-
-comments:
-  # Up to two comments system, the first will be shown as default
-  # Leave it empty if you don't need comments
-  # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
-  # Format of two comments system : Disqus,Waline
-  use:
-  # Display the comment name next to the button
-  text: true
-  # Lazyload: The comment system will be load when comment element enters the browser's viewport.
-  # If you set it to true, the comment count will be invalid
-  lazyload: false
-  # Display comment count in post's top_img
-  count: false
-  # Display comment count in Home Page
-  card_post_count: false
-
-# Disqus
-# https://disqus.com/
-disqus:
-  shortname:
-  # For newest comments widget
-  apikey:
-
-# Alternative Disqus - Render comments with Disqus API
-# https://github.com/SukkaW/DisqusJS
-disqusjs:
-  shortname:
-  apikey:
-  option:
-
-# Livere
-# https://www.livere.com/
-livere:
-  uid:
-
-# Gitalk
-# https://github.com/gitalk/gitalk
-gitalk:
-  client_id:
-  client_secret:
-  repo:
-  owner:
-  admin:
-  option:
-
-# Valine
-# https://valine.js.org
-valine:
-  appId:
-  appKey:
-  avatar: monsterid
-  # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
-  serverURLs:
-  bg:
-  # Use Valine visitor count as the page view count
-  visitor: false
-  option:
-
-# Waline - A simple comment system with backend support fork from Valine
-# https://waline.js.org/
-waline:
-  serverURL:
-  bg:
-  # Use Waline pageview count as the page view count
-  pageview: false
-  option:
-
-# Utterances
-# https://utteranc.es/
-utterances:
-  repo:
-  # Issue Mapping: pathname/url/title/og:title
-  issue_term: pathname
-  # Theme: github-light/github-dark/github-dark-orange/icy-dark/dark-blue/photon-dark
-  light_theme: github-light
-  dark_theme: photon-dark
-  js:
-  option:
-
-# Facebook Comments Plugin
-# https://developers.facebook.com/docs/plugins/comments/
-facebook_comments:
-  app_id:
-  # optional
-  user_id:
-  pageSize: 10
-  # Choose: social / time / reverse_time
-  order_by: social
-  lang: zh_TW
-
-# Twikoo
-# https://github.com/imaegoo/twikoo
-twikoo:
-  envId:
-  region:
-  # Use Twikoo visitor count as the page view count
-  visitor: false
-  option:
-
-# Giscus
-# https://giscus.app/
-giscus:
-  repo:
-  repo_id:
-  category_id:
-  light_theme: light
-  dark_theme: dark
-  js:
-  option:
-
-# Remark42
-# https://remark42.com/docs/configuration/frontend/
-remark42:
-  host:
-  siteId:
-  option:
-
-# Artalk
-# https://artalk.js.org/guide/frontend/config.html
-artalk:
-  server:
-  site:
-  # Use Artalk visitor count as the page view count
-  visitor: false
-  option:
-
-# --------------------------------------
-# Chat Services
-# --------------------------------------
-
-chat:
-  # Choose: chatra/tidio/daovoice/crisp
-  # Leave it empty if you don't need chat
-  use:
-  # Chat Button [recommend]
-  # It will create a button in the bottom right corner of website, and hide the origin button
-  rightside_button: false
-  # The origin chat button is displayed when scrolling up, and the button is hidden when scrolling down
-  button_hide_show: false
-
-# https://chatra.io/
-chatra:
-  id:
-
-# https://www.tidio.com/
-tidio:
-  public_key:
-
-# http://dashboard.daovoice.io/app
-daovoice:
-  app_id:
-
-# https://crisp.chat/en/
-crisp:
-  website_id:
-
-# --------------------------------------
-# Analysis
-# --------------------------------------
-
-# https://tongji.baidu.com/web/welcome/login
-baidu_analytics:
-
-# https://analytics.google.com/analytics/web/
-google_analytics:
-
-# https://www.cloudflare.com/zh-tw/web-analytics/
-cloudflare_analytics:
-
-# https://clarity.microsoft.com/
-microsoft_clarity:
-
-# https://umami.is/
-umami_analytics:
-  enable: false
-  # For self-hosted setups, configure the hostname of the Umami instance
-  serverURL:
-  website_id:
-  option:
-  UV_PV:
-    site_uv: false
-    site_pv: false
-    page_pv: false
-    # Umami Cloud (API key) / self-hosted Umami (token)
-    token:
-
-# --------------------------------------
-# Advertisement
-# --------------------------------------
-
-# Google Adsense
-google_adsense:
-  enable: false
-  auto_ads: true
-  js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
-  client:
-  enable_page_level_ads: true
-
-# Insert ads manually
-# Leave it empty if you don't need ads
-ad:
-  # Insert ads in the index (every three posts)
-  index:
-  # Insert ads in aside
-  aside:
-  # Insert ads in the post (before pagination)
-  post:
-
-# --------------------------------------
-# Verification
-# --------------------------------------
-
-site_verification:
-  # - name: google-site-verification
-  #   content: xxxxxx
-  # - name: baidu-site-verification
-  #   content: xxxxxxx
-
-# --------------------------------------
-# Beautify / Effect
-# --------------------------------------
-
-# Theme color for customize
-# Notice: color value must in double quotes like "#000" or may cause error!
-
-# theme_color:
-#   enable: true
-#   main: "#49B1F5"
-#   paginator: "#00c4b6"
-#   button_hover: "#FF7242"
-#   text_selection: "#00c4b6"
-#   link_color: "#99a9bf"
-#   meta_color: "#858585"
-#   hr_color: "#A4D8FA"
-#   code_foreground: "#F47466"
-#   code_background: "rgba(27, 31, 35, .05)"
-#   toc_color: "#00c4b6"
-#   blockquote_padding_color: "#49b1f5"
-#   blockquote_background_color: "#49b1f5"
-#   scrollbar_color: "#49b1f5"
-#   meta_theme_color_light: "ffffff"
-#   meta_theme_color_dark: "#0d0d0d"
-
-# The user interface setting of category and tag page
-# Choose: index - same as Homepage UI / default - same as archives UI
-# leave it empty or index
-category_ui:
-tag_ui:
-
-# Rounded corners for UI elements
-rounded_corners_ui: true
-
-# Stretches the lines so that each line has equal width
-text_align_justify: false
-
-# Add a mask to the header and footer
-mask:
-  header: true
-  footer: true
-
-# Loading Animation
-preloader:
-  enable: false
-  # source
-  # 1. fullpage-loading
-  # 2. pace (progress bar)
-  source: 1
-  # pace theme (see https://codebyzach.github.io/pace/)
-  pace_css_url:
-
-# Page Transition
-enter_transitions: true
-
-# Default display mode - light (default) / dark
-display_mode: light
-
-# Configuration for beautifying the content of the article
-beautify:
-  enable: false
-  # Specify the field to beautify (site or post)
-  field: post
-  # Specify the icon to be used as a prefix for the title, such as '\f0c1'
-  title_prefix_icon:
-  # Specify the color of the title prefix icon, such as '#F47466'
-  title_prefix_icon_color:
-
-# Global font settings
-# Don't modify the following settings unless you know how they work
-font:
-  global_font_size:
-  code_font_size:
-  font_family:
-  code_font_family:
-
-# Font settings for the site title and site subtitle
-blog_title_font:
-  font_link:
-  font_family:
-
-# The setting of divider icon
-hr_icon:
-  enable: true
-  # The unicode value of Font Awesome icon, such as '\3423'
-  icon:
-  icon_top:
-
-# Typewriter Effect
-# https://github.com/disjukr/activate-power-mode
-activate_power_mode:
-  enable: false
-  colorful: true
-  shake: true
-  mobile: false
-
-# Background effects
-# --------------------------------------
-
-# canvas_ribbon
-# See: https://github.com/hustcc/ribbon.js
-canvas_ribbon:
-  enable: false
-  # The size of ribbon
-  size: 150
-  # The opacity of ribbon (0 ~ 1)
-  alpha: 0.6
-  zIndex: -1
-  click_to_change: false
-  mobile: false
-
-# Fluttering Ribbon
-canvas_fluttering_ribbon:
-  enable: false
-  mobile: false
-
-# canvas_nest
-# https://github.com/hustcc/canvas-nest.js
-canvas_nest:
-  enable: false
-  # Color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
-  color: '0,0,255'
-  # The opacity of line (0~1)
-  opacity: 0.7
-  # The z-index property of the background
-  zIndex: -1
-  # The number of lines
-  count: 99
-  mobile: false
-
-# Mouse click effects: fireworks
-fireworks:
-  enable: false
-  zIndex: 9999
-  mobile: false
-
-# Mouse click effects: Heart symbol
-click_heart:
-  enable: false
-  mobile: false
-
-# Mouse click effects: words
-clickShowText:
-  enable: false
-  text:
-    # - I
-    # - LOVE
-    # - YOU
-  fontSize: 15px
-  random: false
-  mobile: false
-
-# --------------------------------------
-# Lightbox Settings
-# --------------------------------------
-
-# Choose: fancybox / medium_zoom
-# https://github.com/francoischalifour/medium-zoom
-# https://fancyapps.com/fancybox/
-# Leave it empty if you don't need lightbox
-lightbox:
-
-# --------------------------------------
-# Tag Plugins settings
-# --------------------------------------
-
-# Series
-series:
-  enable: false
-  # Order by title or date
-  orderBy: 'title'
-  # Sort of order. 1, asc for ascending; -1, desc for descending
-  order: 1
-  number: true
-
-# ABCJS - The ABC Music Notation Plugin
-# https://github.com/paulrosen/abcjs
-abcjs:
-  enable: false
-  per_page: true
-
-# Mermaid
-# https://github.com/mermaid-js/mermaid
-mermaid:
-  enable: false
-  # Write Mermaid diagrams using code blocks
-  code_write: false
-  # built-in themes: default / forest / dark / neutral
-  theme:
-    light: default
-    dark: dark
-
-# Note - Bootstrap Callout
-note:
-  # Note tag style values:
-  #  - simple    bs-callout old alert style. Default.
-  #  - modern    bs-callout new (v2-v3) alert style.
-  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
-  #  - disabled  disable all CSS styles import of note tag.
-  style: flat
-  icons: true
-  border_radius: 3
-  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
-  # Offset also applied to label tag variables. This option can work with disabled note tag.
-  light_bg_offset: 0
-
-# --------------------------------------
-# Other Settings
-# --------------------------------------
-
-# https://github.com/MoOx/pjax
-pjax:
-  enable: false
-  # Exclude the specified pages from pjax, such as '/music/'
-  exclude:
-    # - /xxxxxx/
-
-# Inject the css and script (aplayer/meting)
-aplayerInject:
-  enable: false
-  per_page: true
-
-# Snackbar - Toast Notification
-# https://github.com/polonel/SnackBar
-# position: top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
-snackbar:
-  enable: false
-  position: bottom-left
-  # The background color of Toast Notification in light mode and dark mode
-  bg_light: '#49b1f5'
-  bg_dark: '#1f1f1f'
-
-# Instant.page
-# https://instant.page/
-instantpage: false
-
-# Pangu - Insert a space between Chinese character and English character
-# https://github.com/vinta/pangu.js
-pangu:
-  enable: false
-  # Specify the field to use pangu (site or post)
-  field: site
-
-# Lazyload
-# https://github.com/verlok/vanilla-lazyload
-lazyload:
-  enable: false
-  # Specify the field to use lazyload (site or post)
-  field: site
-  placeholder:
-  blur: false
-
-# PWA
-# See https://github.com/JLHwung/hexo-offline
-# ---------------
-pwa:
-  enable: false
-  manifest:
-  apple_touch_icon:
-  favicon_32_32:
-  favicon_16_16:
-  mask_icon:
-
-# Open graph meta tags
-# https://hexo.io/docs/helpers#open-graph
-Open_Graph_meta:
-  enable: true
-  option:
-    # twitter_card:
-    # twitter_image:
-    # twitter_id:
-    # twitter_site:
-    # google_plus:
-    # fb_admins:
-    # fb_app_id:
-
-# Add the vendor prefixes to ensure compatibility
-css_prefix: true
-
-# Inject
-# Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
-inject:
-  head:
-    # - <link rel="stylesheet" href="/xxx.css">
-  bottom:
-    # - <script src="xxxx"></script>
-
-# CDN Settings
-# Don't modify the following settings unless you know how they work
-CDN:
-  # The CDN provider for internal and third-party scripts
-  # Options for both: local/jsdelivr/unpkg/cdnjs/custom
-  # Note: Dev version can only use 'local' for internal scripts
-  # Note: When setting third-party scripts to 'local', you need to install hexo-butterfly-extjs
-  internal_provider: local
-  third_party_provider: jsdelivr
-
-  # Add version number to url, true or false
-  version: false
-
-  # Custom format
-  # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
-  custom_format:
-
-  option:
-    # abcjs_basic_js:
-    # activate_power_mode:
-    # algolia_js:
-    # algolia_search:
-    # aplayer_css:
-    # aplayer_js:
-    # artalk_css:
-    # artalk_js:
-    # blueimp_md5:
-    # busuanzi:
-    # canvas_fluttering_ribbon:
-    # canvas_nest:
-    # canvas_ribbon:
-    # click_heart:
-    # clickShowText:
-    # disqusjs:
-    # disqusjs_css:
-    # docsearch_css:
-    # docsearch_js:
-    # egjs_infinitegrid:
-    # fancybox:
-    # fancybox_css:
-    # fireworks:
-    # fontawesome:
-    # gitalk:
-    # gitalk_css:
-    # giscus:
-    # instantpage:
-    # instantsearch:
-    # katex:
-    # katex_copytex:
-    # lazyload:
-    # local_search:
-    # main:
-    # main_css:
-    # mathjax:
-    # medium_zoom:
-    # mermaid:
-    # meting_js:
-    # pangu:
-    # prismjs_autoloader:
-    # prismjs_js:
-    # prismjs_lineNumber_js:
-    # pjax:
-    # sharejs:
-    # sharejs_css:
-    # snackbar:
-    # snackbar_css:
-    # translate:
-    # twikoo:
-    # typed:
-    # utils:
-    # valine:
-    # waline_css:
-    # waline_js:
+  生命是什么||fas fa-list:
+     3. 负熵与生命 : /2024/09/28/香港大学推荐50本/生命是什么/3. 负熵与生命 /
+     5. 量子力学与生命现象 : /2024/09/28/香港大学推荐50本/生命是什么/5. 量子力学与生命现象 /
+     6. 基因与有序性 : /2024/09/28/香港大学推荐50本/生命是什么/6. 基因与有序性 /
+     2. 生命与物理法则的关系 : /2024/09/28/香港大学推荐50本/生命是什么/2. 生命与物理法则的关系 /
+     4. 遗传物质的物理基础 : /2024/09/28/香港大学推荐50本/生命是什么/4. 遗传物质的物理基础 /
+     8. 附录 : /2024/09/28/香港大学推荐50本/生命是什么/8. 附录 /
+     《生命是什么》-大纲: /2024/09/28/香港大学推荐50本/生命是什么/《生命是什么》-大纲/
+     7. 对生命研究的启示 : /2024/09/28/香港大学推荐50本/生命是什么/7. 对生命研究的启示 /
+     1. 引言 : /2024/09/28/香港大学推荐50本/生命是什么/1. 引言 /
+  小王子||fas fa-list:
+     5. 小王子与飞行员的告别 : /2024/09/28/香港大学推荐50本/小王子/5. 小王子与飞行员的告别 /
+     4. 小王子来到地球 : /2024/09/28/香港大学推荐50本/小王子/4. 小王子来到地球 /
+     《小王子》-大纲: /2024/09/28/香港大学推荐50本/小王子/《小王子》-大纲/
+     6. 书的结尾与思考 : /2024/09/28/香港大学推荐50本/小王子/6. 书的结尾与思考 /
+     1. 飞行员与小王子的相遇 : /2024/09/28/香港大学推荐50本/小王子/1. 飞行员与小王子的相遇 /
+     2. 小王子讲述他的星球与生活 : /2024/09/28/香港大学推荐50本/小王子/2. 小王子讲述他的星球与生活 /
+     3. 小王子的星际旅行 : /2024/09/28/香港大学推荐50本/小王子/3. 小王子的星际旅行 /
+  如何阅读一本书||fas fa-list:
+     12 阅读与心智的成长: /2024/09/28/香港大学推荐50本/如何阅读一本书/12 阅读与心智的成长/
+     3 分析阅读的第一个阶段：了解书本的结构: /2024/09/28/香港大学推荐50本/如何阅读一本书/3 分析阅读的第一个阶段：了解书本的结构/
+     4 分析阅读的第二个阶段：解读书本的内容: /2024/09/28/香港大学推荐50本/如何阅读一本书/4 分析阅读的第二个阶段：解读书本的内容/
+     10 如何阅读哲学书: /2024/09/28/香港大学推荐50本/如何阅读一本书/10 如何阅读哲学书/
+     6 如何阅读实用书: /2024/09/28/香港大学推荐50本/如何阅读一本书/6 如何阅读实用书/
+     8 如何阅读历史书: /2024/09/28/香港大学推荐50本/如何阅读一本书/8 如何阅读历史书/
+     9 如何阅读科学与数学书: /2024/09/28/香港大学推荐50本/如何阅读一本书/9 如何阅读科学与数学书/
+     2 阅读的四个层次: /2024/09/28/香港大学推荐50本/如何阅读一本书/2 阅读的四个层次/
+     1阅读的艺术: /2024/09/28/香港大学推荐50本/如何阅读一本书/1阅读的艺术/
+     《如何阅读一本书》-大纲: /2024/09/28/香港大学推荐50本/如何阅读一本书/《如何阅读一本书》-大纲/
+     7 如何阅读想象文学: /2024/09/28/香港大学推荐50本/如何阅读一本书/7 如何阅读想象文学/
+     5 分析阅读的第三个阶段：批判书本: /2024/09/28/香港大学推荐50本/如何阅读一本书/5 分析阅读的第三个阶段：批判书本/
+     13 如何做主题阅读: /2024/09/28/香港大学推荐50本/如何阅读一本书/13 如何做主题阅读/
+     11 如何阅读社会科学书: /2024/09/28/香港大学推荐50本/如何阅读一本书/11 如何阅读社会科学书/
+  非暴力沟通||fas fa-list:
+     8. 用爱与感激进行沟通: /2024/09/28/香港大学推荐50本/非暴力沟通/8. 用爱与感激进行沟通/
+     6. 如何有效地提出请求: /2024/09/28/香港大学推荐50本/非暴力沟通/6. 如何有效地提出请求/
+     《非暴力沟通》-大纲: /2024/09/28/香港大学推荐50本/非暴力沟通/《非暴力沟通》-大纲/
+     7. 同理心倾听: /2024/09/28/香港大学推荐50本/非暴力沟通/7. 同理心倾听/
+     1. 引言: /2024/09/28/香港大学推荐50本/非暴力沟通/1. 引言/
+     2. 非暴力沟通的四大要素: /2024/09/28/香港大学推荐50本/非暴力沟通/2. 非暴力沟通的四大要素/
+     9. 非暴力沟通的日常应用: /2024/09/28/香港大学推荐50本/非暴力沟通/9. 非暴力沟通的日常应用/
+     11. 自我同情: /2024/09/28/香港大学推荐50本/非暴力沟通/11. 自我同情/
+     4. 表达感受，而不是评判: /2024/09/28/香港大学推荐50本/非暴力沟通/4. 表达感受，而不是评判/
+     3. 区分观察与评价: /2024/09/28/香港大学推荐50本/非暴力沟通/3. 区分观察与评价/
+     12. 总结与实践: /2024/09/28/香港大学推荐50本/非暴力沟通/12. 总结与实践/
+     10. 解决冲突: /2024/09/28/香港大学推荐50本/非暴力沟通/10. 解决冲突/
+     5. 了解需求的重要性: /2024/09/28/香港大学推荐50本/非暴力沟通/5. 了解需求的重要性/
+  芙蓉镇||fas fa-list:
+     芙蓉镇-大纲: /2024/09/28/香港大学推荐50本/芙蓉镇/芙蓉镇-大纲/
+  影响力||fas fa-list:
+     第一章：影响力的武器: /2024/09/28/香港大学推荐50本/影响力/第一章：影响力的武器/
+     第七章：稀缺原则: /2024/09/28/香港大学推荐50本/影响力/第七章：稀缺原则/
+     第八章：书籍总结与应用: /2024/09/28/香港大学推荐50本/影响力/第八章：书籍总结与应用/
+     第六章：权威原则: /2024/09/28/香港大学推荐50本/影响力/第六章：权威原则/
+     第四章：社会认同原则: /2024/09/28/香港大学推荐50本/影响力/第四章：社会认同原则/
+     《影响力》-本书大纲 : /2024/09/28/香港大学推荐50本/影响力/《影响力》-本书大纲 /
+     第三章：承诺和一致性原则: /2024/09/28/香港大学推荐50本/影响力/第三章：承诺和一致性原则/
+     第二章：互惠原则: /2024/09/28/香港大学推荐50本/影响力/第二章：互惠原则/
+     第五章：喜好原则: /2024/09/28/香港大学推荐50本/影响力/第五章：喜好原则/
+  激荡三十年||fas fa-list:
+     5. “经济特区”的设立: /2024/09/28/香港大学推荐50本/激荡三十年/5. “经济特区”的设立/
+     3. 个体户与私营企业的萌芽: /2024/09/28/香港大学推荐50本/激荡三十年/3. 个体户与私营企业的萌芽/
+     《激荡三十年》-大纲: /2024/09/28/香港大学推荐50本/激荡三十年/《激荡三十年》-大纲/
+     4. 国企改革的初步尝试: /2024/09/28/香港大学推荐50本/激荡三十年/4. 国企改革的初步尝试/
+     7. “双轨制”改革的实验: /2024/09/28/香港大学推荐50本/激荡三十年/7. “双轨制”改革的实验/
+     2. 农村改革与乡镇企业的崛起: /2024/09/28/香港大学推荐50本/激荡三十年/2. 农村改革与乡镇企业的崛起/
+     8. 社会思想的解放: /2024/09/28/香港大学推荐50本/激荡三十年/8. 社会思想的解放/
+     1. 改革开放的起源（1978年）: /2024/09/28/香港大学推荐50本/激荡三十年/1. 改革开放的起源（1978年）/
+     6. 资本市场的萌芽: /2024/09/28/香港大学推荐50本/激荡三十年/6. 资本市场的萌芽/
+     《1978-1992年——改革的初期探索》-大纲: /2024/09/28/香港大学推荐50本/激荡三十年/《1978-1992年——改革的初期探索》-大纲/
+  人的潜能和价值||fas fa-list:
+     9. 潜能开发的工具与方法: /2024/09/28/香港大学推荐50本/人的潜能和价值/9. 潜能开发的工具与方法/
+     《人的潜能与价值》-大纲 : /2024/09/28/香港大学推荐50本/人的潜能和价值/《人的潜能与价值》-大纲 /
+     3. 心理学与潜能开发: /2024/09/28/香港大学推荐50本/人的潜能和价值/3. 心理学与潜能开发/
+     7. 潜能开发的实际应用: /2024/09/28/香港大学推荐50本/人的潜能和价值/7. 潜能开发的实际应用/
+     2. 人的潜能: /2024/09/28/香港大学推荐50本/人的潜能和价值/2. 人的潜能/
+     4. 身体与心智的潜能: /2024/09/28/香港大学推荐50本/人的潜能和价值/4. 身体与心智的潜能/
+     8. 如何克服限制: /2024/09/28/香港大学推荐50本/人的潜能和价值/8. 如何克服限制/
+     1. 导言: /2024/09/28/香港大学推荐50本/人的潜能和价值/1. 导言/
+     10. 结语: /2024/09/28/香港大学推荐50本/人的潜能和价值/10. 结语/
+     5. 社会因素对潜能开发的影响: /2024/09/28/香港大学推荐50本/人的潜能和价值/5. 社会因素对潜能开发的影响/
+     6. 个人价值的实现: /2024/09/28/香港大学推荐50本/人的潜能和价值/6. 个人价值的实现/
+  伦理学||fas fa-list:
+     4. 主要伦理理论: /2024/09/28/香港大学推荐50本/伦理学/4. 主要伦理理论/
+     5. 伦理学的历史发展: /2024/09/28/香港大学推荐50本/伦理学/5. 伦理学的历史发展/
+     6. 当代伦理学的挑战: /2024/09/28/香港大学推荐50本/伦理学/6. 当代伦理学的挑战/
+     8. 伦理学与其他学科的交叉: /2024/09/28/香港大学推荐50本/伦理学/8. 伦理学与其他学科的交叉/
+     2. 伦理学的基本问题: /2024/09/28/香港大学推荐50本/伦理学/2. 伦理学的基本问题/
+     7. 伦理决策模型与应用: /2024/09/28/香港大学推荐50本/伦理学/7. 伦理决策模型与应用/
+     1. 伦理学的定义与研究对象: /2024/09/28/香港大学推荐50本/伦理学/1. 伦理学的定义与研究对象/
+     3. 伦理学的主要分支: /2024/09/28/香港大学推荐50本/伦理学/3. 伦理学的主要分支/
+     《伦理学》-大纲: /2024/09/28/香港大学推荐50本/伦理学/《伦理学》-大纲/
+  策略思维||fas fa-list:
+     12. 第十一章：博弈论的实际应用: /2024/09/28/香港大学推荐50本/策略思维/12. 第十一章：博弈论的实际应用/
+     6. 第五章：重复博弈: /2024/09/28/香港大学推荐50本/策略思维/6. 第五章：重复博弈/
+     7. 第六章：不完全信息博弈: /2024/09/28/香港大学推荐50本/策略思维/7. 第六章：不完全信息博弈/
+     策略思维-大纲: /2024/09/28/香港大学推荐50本/策略思维/策略思维-大纲/
+     3. 第二章：占优策略与劣势策略: /2024/09/28/香港大学推荐50本/策略思维/3. 第二章：占优策略与劣势策略/
+     11. 第十章：心理博弈与行为策略: /2024/09/28/香港大学推荐50本/策略思维/11. 第十章：心理博弈与行为策略/
+     9. 第八章：议价与谈判策略: /2024/09/28/香港大学推荐50本/策略思维/9. 第八章：议价与谈判策略/
+     13. 结论：如何思考策略性问题: /2024/09/28/香港大学推荐50本/策略思维/13. 结论：如何思考策略性问题/
+     10. 第九章：逆向推理与先行者优势: /2024/09/28/香港大学推荐50本/策略思维/10. 第九章：逆向推理与先行者优势/
+     1. 引言：策略思维的重要性: /2024/09/28/香港大学推荐50本/策略思维/1. 引言：策略思维的重要性/
+     8. 第七章：混合策略: /2024/09/28/香港大学推荐50本/策略思维/8. 第七章：混合策略/
+     2. 第一章：博弈论的基础: /2024/09/28/香港大学推荐50本/策略思维/2. 第一章：博弈论的基础/
+     4. 第三章：纳什均衡: /2024/09/28/香港大学推荐50本/策略思维/4. 第三章：纳什均衡/
+     5. 第四章：承诺与可信性: /2024/09/28/香港大学推荐50本/策略思维/5. 第四章：承诺与可信性/
+  目送||fas fa-list:
+     2. 生命篇: /2024/09/28/香港大学推荐50本/目送/2. 生命篇/
+     5. 自我与孤独篇: /2024/09/28/香港大学推荐50本/目送/5. 自我与孤独篇/
+     《目送》-大纲: /2024/09/28/香港大学推荐50本/目送/《目送》-大纲/
+     1. 亲情篇: /2024/09/28/香港大学推荐50本/目送/1. 亲情篇/
+     3. 人与人关系篇: /2024/09/28/香港大学推荐50本/目送/3. 人与人关系篇/
+     4. 文化与历史篇: /2024/09/28/香港大学推荐50本/目送/4. 文化与历史篇/
+  惠普之道||fas fa-list:
+      6. 普惠金融的挑战: /2024/09/28/香港大学推荐50本/惠普之道/ 6. 普惠金融的挑战/
+      1. 引言: /2024/09/28/香港大学推荐50本/惠普之道/1. 引言/
+      8. 结论: /2024/09/28/香港大学推荐50本/惠普之道/ 8. 结论/
+      7. 未来展望：普惠金融的全球化: /2024/09/28/香港大学推荐50本/惠普之道/ 7. 未来展望：普惠金融的全球化/
+      《普惠之道》大纲: /2024/09/28/香港大学推荐50本/惠普之道/《普惠之道》大纲/
+      5. 普惠金融与社会福利: /2024/09/28/香港大学推荐50本/惠普之道/ 5. 普惠金融与社会福利/
+      4. 普惠金融的实践案例: /2024/09/28/香港大学推荐50本/惠普之道/ 4. 普惠金融的实践案例/
+      3. 普惠金融的核心原则: /2024/09/28/香港大学推荐50本/惠普之道/ 3. 普惠金融的核心原则/
+      2. 全球经济中的不平等: /2024/09/28/香港大学推荐50本/惠普之道/ 2. 全球经济中的不平等/
+  无价||fas fa-list:
+     第四部分：市场营销与定价: /2024/09/28/香港大学推荐50本/无价/第四部分：市场营销与定价/
+     结论: /2024/09/28/香港大学推荐50本/无价/结论/
+     第二部分：定价策略: /2024/09/28/香港大学推荐50本/无价/第二部分：定价策略/
+     《无价》-大纲: /2024/09/28/香港大学推荐50本/无价/《无价》-大纲/
+     第一部分：价格的心理学: /2024/09/28/香港大学推荐50本/无价/第一部分：价格的心理学/
+     引言: /2024/09/28/香港大学推荐50本/无价/引言/
+     第三部分：价格与行为经济学: /2024/09/28/香港大学推荐50本/无价/第三部分：价格与行为经济学/
+  平凡的世界||fas fa-list:
+     5. 结局与反思: /2024/09/28/香港大学推荐50本/平凡的世界/5. 结局与反思/
+     第三部：理想与现实的碰撞: /2024/09/28/香港大学推荐50本/平凡的世界/第三部：理想与现实的碰撞/
+     第一部：艰难的农村生活: /2024/09/28/香港大学推荐50本/平凡的世界/第一部：艰难的农村生活/
+     2. 主要人物: /2024/09/28/香港大学推荐50本/平凡的世界/2. 主要人物/
+     第二部：改革浪潮下的奋斗: /2024/09/28/香港大学推荐50本/平凡的世界/第二部：改革浪潮下的奋斗/
+     4. 主题与思想: /2024/09/28/香港大学推荐50本/平凡的世界/4. 主题与思想/
+     《平凡的世界》-大纲: /2024/09/28/香港大学推荐50本/平凡的世界/《平凡的世界》-大纲/
+     1. 背景与时代: /2024/09/28/香港大学推荐50本/平凡的世界/1. 背景与时代/
+  政府论||fas fa-list:
+     2.2 私有财产的起源: /2024/09/28/香港大学推荐50本/政府论/2.2 私有财产的起源/
+     2.3政府的起源与社会契约: /2024/09/28/香港大学推荐50本/政府论/2.3政府的起源与社会契约/
+     2.1 自然状态与自然法: /2024/09/28/香港大学推荐50本/政府论/2.1 自然状态与自然法/
+     2.4 权力的分配: /2024/09/28/香港大学推荐50本/政府论/2.4 权力的分配/
+     《政府论》-大纲: /2024/09/28/香港大学推荐50本/政府论/《政府论》-大纲/
+     1.1 专制统治的合法性: /2024/09/28/香港大学推荐50本/政府论/1.1 专制统治的合法性/
+     2.6 抵抗与革命的权利: /2024/09/28/香港大学推荐50本/政府论/2.6 抵抗与革命的权利/
+     1.2 对自然状态的论述: /2024/09/28/香港大学推荐50本/政府论/1.2 对自然状态的论述/
+     2.5 政府的责任与权力的限制: /2024/09/28/香港大学推荐50本/政府论/2.5 政府的责任与权力的限制/
+  人月神话||fas fa-list:
+     6. 不可能的银弹: /2024/09/28/香港大学推荐50本/人月神话/6. 不可能的银弹/
+     8. 渐进交付: /2024/09/28/香港大学推荐50本/人月神话/8. 渐进交付/
+     10. 项目延误的应对: /2024/09/28/香港大学推荐50本/人月神话/10. 项目延误的应对/
+     5. 第二系统效应: /2024/09/28/香港大学推荐50本/人月神话/5. 第二系统效应/
+     7. 维护与重构: /2024/09/28/香港大学推荐50本/人月神话/7. 维护与重构/
+     2. 外科医生小组: /2024/09/28/香港大学推荐50本/人月神话/2. 外科医生小组/
+     1. 人月神话: /2024/09/28/香港大学推荐50本/人月神话/1. 人月神话/
+     4. 计划的陷阱: /2024/09/28/香港大学推荐50本/人月神话/4. 计划的陷阱/
+     结论：: /2024/09/28/香港大学推荐50本/人月神话/结论：/
+     3. 沟通的复杂性: /2024/09/28/香港大学推荐50本/人月神话/3. 沟通的复杂性/
+     人月神话 本书大纲 : /2024/09/28/香港大学推荐50本/人月神话/人月神话 本书大纲 /
+     9. 文档的重要性: /2024/09/28/香港大学推荐50本/人月神话/9. 文档的重要性/
+  爱的艺术||fas fa-list:
+     3. 第二章：爱的对象: /2024/09/28/香港大学推荐50本/爱的艺术/3. 第二章：爱的对象/
+     2. 第一章：爱的理论: /2024/09/28/香港大学推荐50本/爱的艺术/2. 第一章：爱的理论/
+     4. 第三章：爱的实践: /2024/09/28/香港大学推荐50本/爱的艺术/4. 第三章：爱的实践/
+     1. 导言：爱是一门艺术 : /2024/09/28/香港大学推荐50本/爱的艺术/1. 导言：爱是一门艺术 /
+     《爱的艺术》-大纲: /2024/09/28/香港大学推荐50本/爱的艺术/《爱的艺术》-大纲/
+     7. 结语：爱的未来: /2024/09/28/香港大学推荐50本/爱的艺术/7. 结语：爱的未来/
+     6. 第五章：爱的分裂与失败: /2024/09/28/香港大学推荐50本/爱的艺术/6. 第五章：爱的分裂与失败/
+     5. 第四章：现代社会中的爱: /2024/09/28/香港大学推荐50本/爱的艺术/5. 第四章：现代社会中的爱/
+  定位||fas fa-list:
+     8. 定位的长期影响: /2024/09/28/香港大学推荐50本/定位/8. 定位的长期影响/
+     《定位》-大纲: /2024/09/28/香港大学推荐50本/定位/《定位》-大纲/
+     9. 定位的实施: /2024/09/28/香港大学推荐50本/定位/9. 定位的实施/
+     7. 全球市场定位: /2024/09/28/香港大学推荐50本/定位/7. 全球市场定位/
+     3. 心智定位：建立心智导向: /2024/09/28/香港大学推荐50本/定位/3. 心智定位：建立心智导向/
+     1. 引言：定位的概念: /2024/09/28/香港大学推荐50本/定位/1. 引言：定位的概念/
+     2. 市场背景：信息过载: /2024/09/28/香港大学推荐50本/定位/2. 市场背景：信息过载/
+     5. 重新定位竞争对手: /2024/09/28/香港大学推荐50本/定位/5. 重新定位竞争对手/
+     10. 总结：定位的未来: /2024/09/28/香港大学推荐50本/定位/10. 总结：定位的未来/
+     4. 创建品牌定位: /2024/09/28/香港大学推荐50本/定位/4. 创建品牌定位/
+     6. 公司名称与品牌命名: /2024/09/28/香港大学推荐50本/定位/6. 公司名称与品牌命名/
+  宽容||fas fa-list:
+     1. 引言：宽容的价值: /2024/09/28/香港大学推荐50本/宽容/1. 引言：宽容的价值/
+     7. 现代宽容的挑战: /2024/09/28/香港大学推荐50本/宽容/7. 现代宽容的挑战/
+     5. 启蒙运动与思想自由: /2024/09/28/香港大学推荐50本/宽容/5. 启蒙运动与思想自由/
+     4. 宗教改革与宽容的发展: /2024/09/28/香港大学推荐50本/宽容/4. 宗教改革与宽容的发展/
+     8. 结论：未来的宽容: /2024/09/28/香港大学推荐50本/宽容/8. 结论：未来的宽容/
+     《宽容》-大纲: /2024/09/28/香港大学推荐50本/宽容/《宽容》-大纲/
+     6. 近代社会中的宽容问题: /2024/09/28/香港大学推荐50本/宽容/6. 近代社会中的宽容问题/
+     3. 中世纪的宗教与宽容: /2024/09/28/香港大学推荐50本/宽容/3. 中世纪的宗教与宽容/
+     2. 古代世界的宽容观: /2024/09/28/香港大学推荐50本/宽容/2. 古代世界的宽容观/
+  设计心理学||fas fa-list:
+     第四部分：人类记忆与设计: /2024/09/28/香港大学推荐50本/设计心理学/第四部分：人类记忆与设计/
+     第三部分：设计的原则: /2024/09/28/香港大学推荐50本/设计心理学/第三部分：设计的原则/
+     第一部分：引言: /2024/09/28/香港大学推荐50本/设计心理学/第一部分：引言/
+     第八部分：结论: /2024/09/28/香港大学推荐50本/设计心理学/第八部分：结论/
+     第二部分：用户心理学: /2024/09/28/香港大学推荐50本/设计心理学/第二部分：用户心理学/
+     第七部分：设计思维与创新: /2024/09/28/香港大学推荐50本/设计心理学/第七部分：设计思维与创新/
+     《设计心里学》-本书大纲: /2024/09/28/香港大学推荐50本/设计心理学/《设计心里学》-本书大纲/
+     第六部分：产品的使用与用户体验: /2024/09/28/香港大学推荐50本/设计心理学/第六部分：产品的使用与用户体验/
+     第五部分：错误与设计: /2024/09/28/香港大学推荐50本/设计心理学/第五部分：错误与设计/
+  拖延心理学||fas fa-list:
+     1. 什么是拖延？ : /2024/09/28/香港大学推荐50本/拖延心理学/1. 什么是拖延？ /
+     6. 具体的拖延应对策略 : /2024/09/28/香港大学推荐50本/拖延心理学/6. 具体的拖延应对策略 /
+     9. 与他人合作克服拖延 : /2024/09/28/香港大学推荐50本/拖延心理学/9. 与他人合作克服拖延 /
+     4. 拖延的后果 : /2024/09/28/香港大学推荐50本/拖延心理学/4. 拖延的后果 /
+     5. 打破拖延的思维模式 : /2024/09/28/香港大学推荐50本/拖延心理学/5. 打破拖延的思维模式 /
+     7. 应对内在阻力：情感与心理的调整 : /2024/09/28/香港大学推荐50本/拖延心理学/7. 应对内在阻力：情感与心理的调整 /
+     3. 拖延的表现形式 : /2024/09/28/香港大学推荐50本/拖延心理学/3. 拖延的表现形式 /
+     8. 长期的行为改变 : /2024/09/28/香港大学推荐50本/拖延心理学/8. 长期的行为改变 /
+     《拖延心理学》-大纲: /2024/09/28/香港大学推荐50本/拖延心理学/《拖延心理学》-大纲/
+     2. 拖延的根源：心理学分析 : /2024/09/28/香港大学推荐50本/拖延心理学/2. 拖延的根源：心理学分析 /
+     10. 拥抱改变与持续成长 : /2024/09/28/香港大学推荐50本/拖延心理学/10. 拥抱改变与持续成长 /
+  梦的解析||fas fa-list:
+     5. 梦的运作机制: /2024/09/28/香港大学推荐50本/梦的解析/5. 梦的运作机制/
+     6. 梦的来源     - : /2024/09/28/香港大学推荐50本/梦的解析/6. 梦的来源     - /
+     4. 梦的象征性     - : /2024/09/28/香港大学推荐50本/梦的解析/4. 梦的象征性     - /
+     1. 导言: /2024/09/28/香港大学推荐50本/梦的解析/1. 导言/
+     梦的解析-大纲: /2024/09/28/香港大学推荐50本/梦的解析/梦的解析-大纲/
+     2. 梦的机制: /2024/09/28/香港大学推荐50本/梦的解析/2. 梦的机制/
+     9. 梦的作用与心理治疗: /2024/09/28/香港大学推荐50本/梦的解析/9. 梦的作用与心理治疗/
+     7. 梦的功能     - : /2024/09/28/香港大学推荐50本/梦的解析/7. 梦的功能     - /
+     3. 梦的内容: /2024/09/28/香港大学推荐50本/梦的解析/3. 梦的内容/
+     8. 梦的个案分析: /2024/09/28/香港大学推荐50本/梦的解析/8. 梦的个案分析/
+     10. 结论: /2024/09/28/香港大学推荐50本/梦的解析/10. 结论/
+  浅薄||fas fa-list:
+     第八章：搜索引擎与人类思维: /2024/09/28/香港大学推荐50本/浅薄/第八章：搜索引擎与人类思维/
+     第一章：工具与大脑的关系: /2024/09/28/香港大学推荐50本/浅薄/第一章：工具与大脑的关系/
+     《浅薄》-大纲: /2024/09/28/香港大学推荐50本/浅薄/《浅薄》-大纲/
+     第二章：知识的变迁: /2024/09/28/香港大学推荐50本/浅薄/第二章：知识的变迁/
+     第九章：科技乐观与悲观: /2024/09/28/香港大学推荐50本/浅薄/第九章：科技乐观与悲观/
+     第六章：文化的浅化: /2024/09/28/香港大学推荐50本/浅薄/第六章：文化的浅化/
+     第四章：分散的注意力: /2024/09/28/香港大学推荐50本/浅薄/第四章：分散的注意力/
+     第十章：未来的思考方式: /2024/09/28/香港大学推荐50本/浅薄/第十章：未来的思考方式/
+     第五章：记忆的外包: /2024/09/28/香港大学推荐50本/浅薄/第五章：记忆的外包/
+     第三章：浅阅读的兴起: /2024/09/28/香港大学推荐50本/浅薄/第三章：浅阅读的兴起/
+     第七章：多任务处理的困境: /2024/09/28/香港大学推荐50本/浅薄/第七章：多任务处理的困境/
+  红与黑||fas fa-list:
+     《红与黑》-大纲: /2024/09/28/香港大学推荐50本/红与黑/《红与黑》-大纲/
+  追寻生命的意义||fas fa-list:
+     3 在痛苦中寻找意义 : /2024/09/28/香港大学推荐50本/追寻生命的意义/3 在痛苦中寻找意义 /
+     7 自由意志与责任 : /2024/09/28/香港大学推荐50本/追寻生命的意义/7 自由意志与责任 /
+     8 生命的短暂与独特性 : /2024/09/28/香港大学推荐50本/追寻生命的意义/8 生命的短暂与独特性 /
+     1 集中营的非人生活: /2024/09/28/香港大学推荐50本/追寻生命的意义/1 集中营的非人生活/
+     6 面对苦难的态度 : /2024/09/28/香港大学推荐50本/追寻生命的意义/6 面对苦难的态度 /
+     《追寻生命的意义》-大纲: /2024/09/28/香港大学推荐50本/追寻生命的意义/《追寻生命的意义》-大纲/
+     9 对未来的希望与信仰 : /2024/09/28/香港大学推荐50本/追寻生命的意义/9 对未来的希望与信仰 /
+     5 人类存在的三大价值 : /2024/09/28/香港大学推荐50本/追寻生命的意义/5 人类存在的三大价值 /
+     4 意义疗法的核心概念 : /2024/09/28/香港大学推荐50本/追寻生命的意义/4 意义疗法的核心概念 /
+     2 心理变化的三个阶段 : /2024/09/28/香港大学推荐50本/追寻生命的意义/2 心理变化的三个阶段 /
+  长尾理论||fas fa-list:
+      7. 需求驱动的经济: /2024/09/28/香港大学推荐50本/长尾理论/ 7. 需求驱动的经济/
+      10. 总结与展望: /2024/09/28/香港大学推荐50本/长尾理论/ 10. 总结与展望/
+      1. 引言: /2024/09/28/香港大学推荐50本/长尾理论/ 1. 引言/
+      3. 无限货架的概念: /2024/09/28/香港惠普之道大学推荐50本/长尾理论/ 3. 无限货架的概念/
+      《长尾理论》-大纲: /2024/09/28/香港大学推荐50本/长尾理论/《长尾理论》-大纲/
+      2. 长尾的崛起: /2024/09/28/香港大学推荐50本/长尾理论/ 2. 长尾的崛起/
+      5. 供给的解放: /2024/09/28/香港大学推荐50本/长尾理论/ 5. 供给的解放/
+      6. 过滤器的作用: /2024/09/28/香港大学推荐50本/长尾理论/ 6. 过滤器的作用/
+      8. 长尾理论的应用: /2024/09/28/香港大学推荐50本/长尾理论/ 8. 长尾理论的应用/
+      9. 新规则和战略: /2024/09/28/香港大学推荐50本/长尾理论/ 9. 新规则和战略/
+      4. 需求的解放: /2024/09/28/香港大学推荐50本/长尾理论/ 4. 需求的解放/
+  社会契约论||fas fa-list:
+     第二卷：主权与共同体: /2024/09/28/香港大学推荐50本/社会契约论/第二卷：主权与共同体/
+     第四卷：法律与自由: /2024/09/28/香港大学推荐50本/社会契约论/第四卷：法律与自由/
+     大纲: /2024/09/28/香港大学推荐50本/社会契约论/《社会契约论》-大纲/
+     第三卷：政府的形式与功能: /2024/09/28/香港大学推荐50本/社会契约论/ 第三卷：政府的形式与功能/
+     1. 导论: /2024/09/28/香港大学推荐50本/社会契约论/1. 导论/
+     第一卷：原始状态与社会契约: /2024/09/28/香港大学推荐50本/社会契约论/第一卷：原始状态与社会契约/
+  麦肯锡方法||fas fa-list:
+     3.3 与客户的合作  : /2024/09/28/香港大学推荐50本/麦肯锡方法/3.3 与客户的合作  /
+     2 让建议易于执行  : /2024/09/28/香港大学推荐50本/麦肯锡方法/2 让建议易于执行  /
+     1.4 假设驱动法  : /2024/09/28/香港大学推荐50本/麦肯锡方法/1.4 假设驱动法  /
+     3.2 时间管理  : /2024/09/28/香港大学推荐50本/麦肯锡方法/3.2 时间管理  /
+     1.1定义问题  : /2024/09/28/香港大学推荐50本/麦肯锡方法/1.1定义问题  /
+     2 高效的沟通  : /2024/09/28/香港大学推荐50本/麦肯锡方法/2 高效的沟通  /
+     3.1 有效的团队合作  : /2024/09/28/香港大学推荐50本/麦肯锡方法/3.1 有效的团队合作  /
+     2 故事化的报告  : /2024/09/28/香港大学推荐50本/麦肯锡方法/2 故事化的报告  /
+     4.2 职业成长  : /2024/09/28/香港大学推荐50本/麦肯锡方法/4.2 职业成长  /
+     1.2 结构化思维  : /2024/09/28/香港大学推荐50本/麦肯锡方法/1.2 结构化思维  /
+     1.3 数据驱动的决策   : /2024/09/28/香港大学推荐50本/麦肯锡方法/1.3 数据驱动的决策   /
+     《麦肯锡方法》-大纲: /2024/09/28/香港大学推荐50本/麦肯锡方法/《麦肯锡方法》-大纲/
+     4.1 持续学习  : /2024/09/28/香港大学推荐50本/麦肯锡方法/4.1 持续学习  /
+  欢乐的经济学||fas fa-list:
+     结语：真正的激励: /2024/09/28/香港大学推荐50本/欢乐的经济学/结语：真正的激励/
+     欢乐经济学-大纲: /2024/09/28/香港大学推荐50本/欢乐的经济学/欢乐经济学-大纲/
+     第1章：金钱与动机: /2024/09/28/香港大学推荐50本/欢乐的经济学/第1章：金钱与动机/
+     1引言：动机的本质: /2024/09/28/香港大学推荐50本/欢乐的经济学/1引言：动机的本质/
+     第6章：失败与动机: /2024/09/28/香港大学推荐50本/欢乐的经济学/第6章：失败与动机/
+     第4章：情感与动机: /2024/09/28/香港大学推荐50本/欢乐的经济学/第4章：情感与动机/
+     第2章：意义与满足感: /2024/09/28/香港大学推荐50本/欢乐的经济学/第2章：意义与满足感/
+     第7章：动机的未来: /2024/09/28/香港大学推荐50本/欢乐的经济学/第7章：动机的未来/
+     引言：动机的本质: /2024/09/28/香港大学推荐50本/欢乐的经济学/引言：动机的本质/
+     第5章：信任与合作: /2024/09/28/香港大学推荐50本/欢乐的经济学/第5章：信任与合作/
+     第3章：努力与回报: /2024/09/28/香港大学推荐50本/欢乐的经济学/第3章：努力与回报/
+  菊花与刀||fas fa-list:
+      8. 日本的自我与社会的关系: /2024/09/28/香港大学推荐50本/菊花与刀/ 8. 日本的自我与社会的关系/
+      4. 义理与人情: /2024/09/28/香港大学推荐50本/菊花与刀/ 4. 义理与人情/
+      3. 日本的历史与社会结构: /2024/09/28/香港大学推荐50本/菊花与刀/ 3. 日本的历史与社会结构/
+      2. 文化的相对性与人类学的视角: /2024/09/28/香港大学推荐50本/菊花与刀/ 2. 文化的相对性与人类学的视角/
+      1. 引言: /2024/09/28/香港大学推荐50本/菊花与刀/ 1. 引言/
+      10. 结论：日本文化的矛盾与复杂性: /2024/09/28/香港大学推荐50本/菊花与刀/ 10. 结论：日本文化的矛盾与复杂性/
+      5. 武士道与武力文化: /2024/09/28/香港大学推荐50本/菊花与刀/ 5. 武士道与武力文化/
+      9. 日本的家庭与教育: /2024/09/28/香港大学推荐50本/菊花与刀/ 9. 日本的家庭与教育/
+      7. 恩与报恩: /2024/09/28/香港大学推荐50本/菊花与刀/ 7. 恩与报恩/
+      6. 耻感文化与罪感文化: /2024/09/28/香港大学推荐50本/菊花与刀/ 6. 耻感文化与罪感文化/
+      《菊花与刀》-大纲: /2024/09/28/香港大学推荐50本/菊花与刀/《菊花与刀》-大纲/
+  经济学原理||fas fa-list:
+     第14章：货币、银行与货币政策: /2024/09/28/香港大学推荐50本/经济学原理/第14章：货币、银行与货币政策/
+     第25章：环境经济学: /2024/09/28/香港大学推荐50本/经济学原理/第25章：环境经济学/
+     第9章：公共物品与公共资源: /2024/09/28/香港大学推荐50本/经济学原理/第9章：公共物品与公共资源/
+     第22章：国际贸易: /2024/09/28/香港大学推荐50本/经济学原理/第22章：国际贸易/
+     《经济学原理》-大纲: /2024/09/28/香港大学推荐50本/经济学原理/《经济学原理》-大纲/
+     第2章：如何做出决策: /2024/09/28/香港大学推荐50本/经济学原理/第2章：如何做出决策/
+     第23章：全球化与经济发展: /2024/09/28/香港大学推荐50本/经济学原理/第23章：全球化与经济发展/
+     第10章：不完全竞争: /2024/09/28/香港大学推荐50本/经济学原理/第10章：不完全竞争/
+     第18章：储蓄、投资与金融体系: /2024/09/28/香港大学推荐50本/经济学原理/第18章：储蓄、投资与金融体系/
+     第24章：贫困与不平等: /2024/09/28/香港大学推荐50本/经济学原理/第24章：贫困与不平等/
+     第11章：信息不对称与道德风险: /2024/09/28/香港大学推荐50本/经济学原理/第11章：信息不对称与道德风险/
+     第5章：弹性与其应用: /2024/09/28/香港大学推荐50本/经济学原理/第5章：弹性与其应用/
+     第19章：经济周期: /2024/09/28/香港大学推荐50本/经济学原理/第19章：经济周期/
+     第21章：财政政策与货币政策: /2024/09/28/香港大学推荐50本/经济学原理/第21章：财政政策与货币政策/
+     第16章：经济增长的决定因素: /2024/09/28/香港大学推荐50本/经济学原理/第16章：经济增长的决定因素/
+     第6章：市场效率: /2024/09/28/香港大学推荐50本/经济学原理/第6章：市场效率/
+     第13章：失业与通货膨胀: /2024/09/28/香港大学推荐50本/经济学原理/第13章：失业与通货膨胀/
+     第1章：什么是经济学: /2024/09/28/香港大学推荐50本/经济学原理/第1章：什么是经济学/
+     第20章：凯恩斯主义与货币主义的比较: /2024/09/28/香港大学推荐50本/经济学原理/第20章：凯恩斯主义与货币主义的比较/
+     第12章：GDP的衡量: /2024/09/28/香港大学推荐50本/经济学原理/第12章：GDP的衡量/
+     第15章：开放经济中的宏观经济: /2024/09/28/香港大学推荐50本/经济学原理/第15章：开放经济中的宏观经济/
+     第7章：政府政策的影响: /2024/09/28/香港大学推荐50本/经济学原理/第7章：政府政策的影响/
+     第17章：资本积累与技术进步: /2024/09/28/香港大学推荐50本/经济学原理/第17章：资本积累与技术进步/
+     第3章：经济学思维方式: /2024/09/28/香港大学推荐50本/经济学原理/第3章：经济学思维方式/
+     第4章：供给与需求: /2024/09/28/香港大学推荐50本/经济学原理/第4章：供给与需求/
+     第8章：外部性: /2024/09/28/香港大学推荐50本/经济学原理/第8章：外部性/
+  悲惨世界||fas fa-list:
+     《悲惨世界》-大纲: /2024/09/28/香港大学推荐50本/悲惨世界/《悲惨世界》-大纲/
