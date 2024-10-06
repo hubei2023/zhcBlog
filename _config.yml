@@ -106,8 +106,7 @@ deploy:
   type: ''
 
 search:
-  path: search.xml  # 生成的搜索索引文件，可以是 search.xml 或 search.json
-  field: post       # 可以选择 post, page 或者 both，表示搜索范围
-  format: html      # 支持 html 和 excerpt，表示索引内容格式
-  limit: 10000      # 设置搜索结果数量上限
-
+  path: search.xml
+  field: post # post:文章范围、page:页面范围、all:覆盖所有
+  content: true # 内容是否包含每一篇文章的全部内容
+  template:  # ./search.xml 指定定制的XML模板
