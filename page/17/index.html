@@ -51,7 +51,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2024-10-07 08:15:18'
+  postUpdate: '2024-10-07 12:35:13'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -163,22 +163,65 @@ Stream模块：处理TCP和UDP协议的请求。
 处理模块：对请求进行过滤、修改或添加特定功能。
 协议模块：用于扩展Nginx支持的协议。
 
-2. 使用现有模块扩展NginxNginx本身提供了 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/8%20%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86%E4%B8%8E%E7%9B%91%E6%8E%A7/" title="《精通Nginx（第2版）》-8 **日志管理与监控**">《精通Nginx（第2版）》-8 **日志管理与监控**</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">在Nginx的《日志管理与监控》章节中，主要介绍如何通过Nginx的日志功能记录和监控服务器的运行状态。日志管理是Nginx运维的关键组成部分，它有助于管理员分析流量、发现性能瓶颈、调试问题和检测潜在的安全威胁。通过对Nginx日志的有效管理和监控，管理员可以及时发现问题并采取相应的措施。
-以下是该章节的详细介绍：
-1. Nginx的日志类型Nginx支持两种主要类型的日志：
+2. 使用现有模块扩展NginxNginx本身提供了 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89/%E3%80%8A%E7%B2%BE%E9%80%9ANginx%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89%E3%80%8B-%E5%A4%A7%E7%BA%B2/" title="《精通Nginx（第2版）》-《精通Nginx（第2版）》-大纲">《精通Nginx（第2版）》-《精通Nginx（第2版）》-大纲</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">《精通Nginx（第2版）》的详细大纲。然而，我可以为您概述一下一本深入讲解Nginx的书籍通常会涵盖的主要内容：
 
-访问日志（Access Logs）：记录所有客户端对服务器的请求信息。
-错误日志（Error Logs）：记录服务器在处理请求过程中发生的错误或警告信息。
+Nginx概述
 
-2. 访问日志管理访问日志记录了所有客户端对服务器的请求信息，包括请求的时间、客户端IP、请求的资源路径、返回的状态码、请求大小、响应时间等。通过访问日志，管理员可以了解服务器的流量情况、响应时间，以及客户端的请求行为。
-2.1 访问日志的基本配置默认情况下，Nginx的访问日志会记录所有的请求信息。
+Nginx的起源和发展历程
+与其他Web服务器的比较
+应用场景和优势
 
-示例配置：
-123http &#123;    access_log /var/log/nginx/access.log;&#125;
 
-解释：
+安装与基础配置
 
-**a ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E4%BA%BA%E6%9C%88%E7%A5%9E%E8%AF%9D/1.%20%E4%BA%BA%E6%9C%88%E7%A5%9E%E8%AF%9D/" title="《人月神话》-1. **人月神话**">《人月神话》-1. **人月神话**</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">1. 人月神话（The Mythical Man-Month）“人月神话”是弗雷德里克·布鲁克斯在软件项目管理领域中提出的一个著名的观点，它挑战了传统的软件开发时间和人力的简单换算方式。书名《人月神话》就来源于这个思想。以下是对这一理论的详细介绍：
+源码编译安装和包管理器安装
+基本配置文件结构解析
+常用指令和模块介绍
+
+
+处理静态与动态内容
+
+静态文件服务优化
+与后端应用服务器的集成（如PHP-FPM、Python WSGI）
+FastCGI、uWSGI、SCGI的配置
+
+
+反向代理与负载均衡
+
+配置反向代理服务器
+负载均衡策略（轮询、IP哈希等）
+上游服务器的健康检查
+
+
+缓存机制
+
+配置Nginx的代理缓存
+缓存键和缓存时间控制
+与Memcached等外部缓存的集成
+
+
+安全与访问控制
+
+配置SSL&#x2F;TLS加密
+使用Let’s Encrypt实现免费证书
+访问控制列表和身份验证机制
+
+
+高性能优化
+
+连接复用和异步处理
+调整工作进程和连接数
+使用Gzip和Brotli压缩
+
+
+日志管理与监控
+
+自定义日志格式
+日志轮替和分析
+与监控工具的集成（如Grafana、Prometheus）
+
+
+模块 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E4%BA%BA%E6%9C%88%E7%A5%9E%E8%AF%9D/1.%20%E4%BA%BA%E6%9C%88%E7%A5%9E%E8%AF%9D/" title="《人月神话》-1. **人月神话**">《人月神话》-1. **人月神话**</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">1. 人月神话（The Mythical Man-Month）“人月神话”是弗雷德里克·布鲁克斯在软件项目管理领域中提出的一个著名的观点，它挑战了传统的软件开发时间和人力的简单换算方式。书名《人月神话》就来源于这个思想。以下是对这一理论的详细介绍：
 背景：在软件开发和项目管理中，“人月”（Man-Month）是一个常用的度量单位，表示一名开发人员一个月的工作量。项目经理往往会用“人月”来估算项目的工作量。如果一个项目预计需要10个人月，那么项目经理可能会认为可以通过增加人手来加快进度——例如，如果雇用两个人，项目将在5个月内完成。如果雇用5个人，项目将在2个月内完成。然而，布鲁克斯指出这种简单的换算方法是错误的，特别是在软件项目中。
 人月神话的核心思想：布鲁克斯的核心观点是“人月”不是一个可以简单线性拆分的单位。他提出：
 
@@ -243,21 +286,14 @@ Stream模块：处理TCP和UDP协议的请求。
 1. 软件开发中的固有复杂性：
 软件开发的主要挑战来自其固有复杂性，而这种复杂性是无法被简单解决或消除的。布鲁克斯将软件的复杂性分为两种：
 
-固有复杂性（Essential Complexity）：这是 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E4%BA%BA%E6%9C%88%E7%A5%9E%E8%AF%9D/%E4%BA%BA%E6%9C%88%E7%A5%9E%E8%AF%9D%20%E6%9C%AC%E4%B9%A6%E5%A4%A7%E7%BA%B2%20/" title="《人月神话》-人月神话 本书大纲 ">《人月神话》-人月神话 本书大纲 </a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">《人月神话》（The Mythical Man-Month）是软件工程经典著作，由弗雷德里克·布鲁克斯（Frederick P. Brooks）撰写。书中探讨了软件项目管理的挑战，特别是大型项目中的复杂性和沟通成本。以下是《人月神话》的一些核心内容和大纲：
-1. 人月神话
-书的标题源自一个常见的误解，即通过增加人力可以缩短项目的进度。然而，作者指出，增加人员往往会导致更多的沟通成本，进而延长项目周期。
+固有复杂性（Essential Complexity）：这是 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/28/%E9%A6%99%E6%B8%AF%E5%A4%A7%E5%AD%A6%E6%8E%A8%E8%8D%9050%E6%9C%AC/%E4%BA%BA%E6%9C%88%E7%A5%9E%E8%AF%9D/7.%20%E7%BB%B4%E6%8A%A4%E4%B8%8E%E9%87%8D%E6%9E%84/" title="《人月神话》-7. **维护与重构**">《人月神话》-7. **维护与重构**</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2024-09-28T00:00:00.000Z" title="Created 2024-09-28 00:00:00">2024-09-28</time></span></div><div class="content">7. 维护与重构（Maintenance and Refactoring）维护与重构是《人月神话》中讨论的关键话题之一，特别是在软件开发的生命周期中，软件的维护和重构对项目的成功和长期健康起着至关重要的作用。布鲁克斯指出，软件开发不仅仅是完成最初的代码编写，更重要的是持续的维护和改进，因为软件系统会随着时间的推移而变得复杂、脆弱，甚至难以维持。
+软件维护的定义与挑战：软件维护指的是在软件系统完成初始开发并投入使用后，对系统进行的修正、改进和优化工作。软件维护的工作包括修复错误、性能优化、适应新环境、添加新功能以及确保软件的长期稳定性。维护过程是软件开发生命周期中时间最长且最具挑战性的部分。
+软件维护的类别：布鲁克斯将软件维护分为以下几类：
 
-2. 外科医生小组
-书中提出了一种团队模型，建议一个高效的团队应类似于外科医生团队，其中一个核心人物承担关键任务，而其他成员则在周边提供支持。
+纠错性维护（Corrective Maintenance）：
 
-3. 沟通的复杂性
-在软件开发中，随着团队人数的增加，沟通链路呈指数增长。因此，在团队扩展时，沟通管理成为项目管理中的一大挑战。
+修复错误：这是最常见的维护类型之一，旨在修复在使用过程中发现的缺陷或错误。这类维护工作通常是紧急的，因为严重的错误可能影响系统的正常运行。
+即便在最初的开发阶段已经进行了详细的测试，现实世界中的使用场景和边界条件往往会暴露出新的问题。因此，纠错性维护是软件生命周期中的持续性工作。
 
-4. 计划的陷阱
-作者讨论了计划不当的常见问题，例如低估项目复杂性、乐观估计以及未能有效处理进度延迟。
 
-5. 第二系统效应
-第二系统效应是指开发者在经历过一次系统开发后，倾向于在下一个系统中过度设计，导致系统复杂性增加和开发时间延长。
-
-6. 不可能的银弹
-“没有银弹”这个比喻是书中的经典论断，指出没有单一技术 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/16/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/#content-inner">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/#content-inner">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/#content-inner">47</a><a class="extend next" rel="next" href="/page/18/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ethan</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">470</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yourusername" target="_blank" title=""><i class="GitHub"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/07/%E9%9D%9E%E6%8A%80%E6%9C%AF%E4%B9%A6%E7%B1%8D/%E8%AF%BB%E4%B9%A6%E4%B9%A6%E5%8D%95/" title="读书书单">读书书单</a><time datetime="2024-10-07T08:15:00.647Z" title="Created 2024-10-07 08:15:00">2024-10-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/07/%E8%89%BA%E6%9C%AF/%E7%94%B5%E5%BD%B1-%E5%A5%A5%E6%96%AF%E5%8D%A1/" title="电影-奥斯卡">电影-奥斯卡</a><time datetime="2024-10-07T08:15:00.646Z" title="Created 2024-10-07 08:15:00">2024-10-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/07/%E8%89%BA%E6%9C%AF/%E7%94%B5%E5%BD%B1-%E5%8D%8E%E8%A1%A8%E5%A5%96/" title="电影-华表奖">电影-华表奖</a><time datetime="2024-10-07T08:15:00.645Z" title="Created 2024-10-07 08:15:00">2024-10-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/07/%E3%80%8A%E4%B8%AD%E5%9C%8B%E4%BA%BA%E7%9A%84%E5%BE%B7%E8%A1%8C%E3%80%8B%E5%88%87%E6%96%AF%E7%89%B9%C2%B7%E4%BD%95%E7%88%BE%E5%BA%B7/%2010.%20%E4%B8%AD%E5%9B%BD%E4%BA%BA%E7%9A%84%E5%AE%B6%E5%BA%AD%E8%A7%82%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%BB%93%E6%9E%84/" title="《《中國人的德行》切斯特·何爾康》- 10. 中国人的家庭观与社会结构">《《中國人的德行》切斯特·何爾康》- 10. 中国人的家庭观与社会结构</a><time datetime="2024-10-07T00:00:00.000Z" title="Created 2024-10-07 00:00:00">2024-10-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/07/%E3%80%8A%E4%B8%AD%E5%9C%8B%E4%BA%BA%E7%9A%84%E5%BE%B7%E8%A1%8C%E3%80%8B%E5%88%87%E6%96%AF%E7%89%B9%C2%B7%E4%BD%95%E7%88%BE%E5%BA%B7/%201.%20%E5%BC%95%E8%A8%80%EF%BC%9A%E5%AF%B9%E4%B8%AD%E5%9B%BD%E4%BA%BA%E7%9A%84%E8%A7%82%E5%AF%9F/" title="《《中國人的德行》切斯特·何爾康》- 1. 引言：对中国人的观察">《《中國人的德行》切斯特·何爾康》- 1. 引言：对中国人的观察</a><time datetime="2024-10-07T00:00:00.000Z" title="Created 2024-10-07 00:00:00">2024-10-07</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">October 2024</span><span class="card-archive-list-count">99</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">September 2024</span><span class="card-archive-list-count">371</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">470</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-10-07T08:15:17.752Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Ethan</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
+ ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/16/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/#content-inner">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/#content-inner">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/#content-inner">47</a><a class="extend next" rel="next" href="/page/18/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Ethan</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">470</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/yourusername" target="_blank" title=""><i class="GitHub"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/07/%E9%9D%9E%E6%8A%80%E6%9C%AF%E4%B9%A6%E7%B1%8D/%E8%AF%BB%E4%B9%A6%E4%B9%A6%E5%8D%95/" title="读书书单">读书书单</a><time datetime="2024-10-07T12:34:55.494Z" title="Created 2024-10-07 12:34:55">2024-10-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/07/%E8%89%BA%E6%9C%AF/%E7%94%B5%E5%BD%B1-%E5%8D%8E%E8%A1%A8%E5%A5%96/" title="电影-华表奖">电影-华表奖</a><time datetime="2024-10-07T12:34:55.492Z" title="Created 2024-10-07 12:34:55">2024-10-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/07/%E8%89%BA%E6%9C%AF/%E7%94%B5%E5%BD%B1-%E5%A5%A5%E6%96%AF%E5%8D%A1/" title="电影-奥斯卡">电影-奥斯卡</a><time datetime="2024-10-07T12:34:55.492Z" title="Created 2024-10-07 12:34:55">2024-10-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/07/%E3%80%8A%E4%B8%AD%E5%9C%8B%E4%BA%BA%E7%9A%84%E5%BE%B7%E8%A1%8C%E3%80%8B%E5%88%87%E6%96%AF%E7%89%B9%C2%B7%E4%BD%95%E7%88%BE%E5%BA%B7/%201.%20%E5%BC%95%E8%A8%80%EF%BC%9A%E5%AF%B9%E4%B8%AD%E5%9B%BD%E4%BA%BA%E7%9A%84%E8%A7%82%E5%AF%9F/" title="《《中國人的德行》切斯特·何爾康》- 1. 引言：对中国人的观察">《《中國人的德行》切斯特·何爾康》- 1. 引言：对中国人的观察</a><time datetime="2024-10-07T00:00:00.000Z" title="Created 2024-10-07 00:00:00">2024-10-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/07/%E3%80%8A%E4%B8%AD%E5%9C%8B%E4%BA%BA%E7%9A%84%E5%BE%B7%E8%A1%8C%E3%80%8B%E5%88%87%E6%96%AF%E7%89%B9%C2%B7%E4%BD%95%E7%88%BE%E5%BA%B7/%2010.%20%E4%B8%AD%E5%9B%BD%E4%BA%BA%E7%9A%84%E5%AE%B6%E5%BA%AD%E8%A7%82%E4%B8%8E%E7%A4%BE%E4%BC%9A%E7%BB%93%E6%9E%84/" title="《《中國人的德行》切斯特·何爾康》- 10. 中国人的家庭观与社会结构">《《中國人的德行》切斯特·何爾康》- 10. 中国人的家庭观与社会结构</a><time datetime="2024-10-07T00:00:00.000Z" title="Created 2024-10-07 00:00:00">2024-10-07</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/10/"><span class="card-archive-list-date">October 2024</span><span class="card-archive-list-count">99</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">September 2024</span><span class="card-archive-list-count">371</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">470</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-10-07T12:35:12.039Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Ethan</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
