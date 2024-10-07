@@ -344,3 +344,14 @@ menu:
 
 local_search:
   enable: true
+
+
+
+social:
+  GitHub: https://github.com/yourusername
+
+widget:
+  social:
+    enable: false
+    title: Follow Me  # 你可以修改为想要的文本，例如 "关注我"
+  # 你可以继续添加其他社交媒体平台

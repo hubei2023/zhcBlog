@@ -12,7 +12,7 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println("menu:\n" + "  Home: / || fas fa-home");
-        printMenu("/Users/whoareyou/hubei2023.github.io/source/_posts/香港大学推荐50本/");
+        printMenu("/Users/whoareyou/hubei2023.github.io/source/_posts/");
     }
 
     public static void printMenu(String path) {
