@@ -15,7 +15,7 @@ public class GenTitle {
 
 
     // 获取当前工作目录名
-    static String currentDirectoryName = "/Users/whoareyou/hubei2023.github.io/source/_posts";
+    static String currentDirectoryName = "/Users/huocheng/hubei2023.github.io/source/_posts";
 
     public static void main(String[] args) {
         // 获取当前日期并格式化

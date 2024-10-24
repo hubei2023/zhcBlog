@@ -7,7 +7,7 @@ public class RenameFiles {
 
     public static void main(String[] args) {
         // 指定要操作的目录
-        String directoryPath = "/Users/whoareyou/hubei2023.github.io/source/_posts/";
+        String directoryPath = "/Users/huocheng/hubei2023.github.io/source/_posts/";
 
         try {
             // 遍历指定目录及其子目录下的所有文件
